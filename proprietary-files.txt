@@ -1139,23 +1139,17 @@ vendor/lib64/soundfx/libagc1sw_mtk.so
 vendor/lib64/soundfx/libagc2sw.so
 vendor/lib64/soundfx/libagc2sw_mtk.so
 vendor/lib64/soundfx/libbassboostsw.so
-vendor/lib64/soundfx/libbundleaidl.so
-vendor/lib64/soundfx/libdownmixaidl.so
-vendor/lib64/soundfx/libdynamicsprocessingaidl.so
 vendor/lib64/soundfx/libenvreverbsw.so
 vendor/lib64/soundfx/libequalizersw.so
 vendor/lib64/soundfx/libextensioneffect.so
-vendor/lib64/soundfx/libloudnessenhanceraidl.so
 vendor/lib64/soundfx/libnssw.so
 vendor/lib64/soundfx/libnssw_mtk.so
 vendor/lib64/soundfx/libpreprocessingaidl.so
 vendor/lib64/soundfx/libpreprocessingaidl_mtk.so
 vendor/lib64/soundfx/libpresetreverbsw.so
-vendor/lib64/soundfx/libreverbaidl.so
 vendor/lib64/soundfx/libspatializer.so
 vendor/lib64/soundfx/libspatializeraidl.so
 vendor/lib64/soundfx/libvirtualizersw.so
-vendor/lib64/soundfx/libvisualizeraidl.so
 vendor/lib64/soundfx/libvolumesw.so
 
 # Stock vendor compatibility libraries

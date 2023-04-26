@@ -172,6 +172,15 @@ PRODUCT_PACKAGES += \
     hfp_codec_capabilities_xml \
     libhapticgeneratoraidl
 
+# Common AIDL software effects. Device-specific processing stays proprietary.
+PRODUCT_PACKAGES += \
+    libvisualizeraidl \
+    libbundleaidl \
+    libreverbaidl \
+    libdynamicsprocessingaidl \
+    libloudnessenhanceraidl \
+    libdownmixaidl
+
 # Frozen AIDL NDK libraries needed by proprietary vendor processes. Install
 # their source-built vendor variants in the vendor linker namespace.
 PRODUCT_PACKAGES += \
