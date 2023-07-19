@@ -121,6 +121,10 @@ $(call inherit-product, hardware/mediatek/overlay/mssi.mk)
 PRODUCT_PACKAGES += \
     AuraParts
 
+# DRM
+PRODUCT_PACKAGES += \
+    android.hardware.drm-service.clearkey
+
 # Device overlays
 PRODUCT_PACKAGES += \
     CellBroadcastOverlayAura_A1 \

@@ -1,4 +1,3 @@
-/(vendor|system/vendor)/bin/hw/android\.hardware\.drm-service\.clearkey-stock u:object_r:hal_drm_clearkey_aidl_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.gatekeeper-service\.beanpod u:object_r:hal_gatekeeper_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint-service u:object_r:hal_fingerprint_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.identity-service\.beanpod u:object_r:hal_identity_default_exec:s0

@@ -240,11 +240,6 @@ blob_fixups: blob_fixups_user_type = {
         .clear_symbol_version('AHardwareBuffer_unlock'),
     'vendor/lib64/libteei_daemon_vfs.so': blob_fixup()
         .add_needed('liblog.so'),
-    'vendor/etc/init/android.hardware.drm-service.clearkey-stock.rc': blob_fixup()
-        .regex_replace(
-            r'/vendor/bin/hw/android\.hardware\.drm-service\.clearkey(?=\s)',
-            '/vendor/bin/hw/android.hardware.drm-service.clearkey-stock',
-        ),
     'vendor/etc/init/android.hardware.wifi-service-lazy-stock.rc': blob_fixup()
         .regex_replace(
             r'/vendor/bin/hw/android\.hardware\.wifi-service-lazy(?=\s)',
