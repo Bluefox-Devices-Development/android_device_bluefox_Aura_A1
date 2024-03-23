@@ -3,7 +3,6 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.identity-service\.beanpod u:object_r:hal_identity_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.nfc-service-tms u:object_r:hal_nfc_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.security\.keymint@4\.0-service\.beanpod u:object_r:hal_keymint_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.wifi-service-lazy-stock u:object_r:hal_wifi_default_exec:s0
 /(vendor|system/vendor)/bin/hw/wpa_supplicant-stock u:object_r:hal_wifi_supplicant_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.mediatek\.hardware\.gnss-service u:object_r:mtk_hal_batching_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.microtrust\.hardware\.thh-service u:object_r:teei_hal_thh_exec:s0

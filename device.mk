@@ -233,7 +233,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += android.hardware.light-service.lineage
 
 # Wi-Fi
-PRODUCT_PACKAGES += wlan_assistant
+PRODUCT_PACKAGES += \
+    android.hardware.wifi-service-lazy \
+    libwifi-hal-wrapper \
+    wlan_assistant
 
 # Inherit proprietary files
 $(call inherit-product, vendor/bluefox/Aura_A1/Aura_A1-vendor.mk)

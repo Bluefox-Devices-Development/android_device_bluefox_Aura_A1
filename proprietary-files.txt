@@ -113,7 +113,6 @@ vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek
 vendor/bin/hw/android.hardware.security.keymint@4.0-service.beanpod
 vendor/bin/hw/android.hardware.thermal-service.mediatek
 vendor/bin/hw/android.hardware.vibrator-service.mediatek
-vendor/bin/hw/android.hardware.wifi-service-lazy:vendor/bin/hw/android.hardware.wifi-service-lazy-stock
 vendor/bin/hw/hostapd;MODULE=hostapd-stock
 vendor/bin/hw/mtkfusionrild
 vendor/bin/hw/vendor.mediatek.hardware.gnss-service
@@ -396,7 +395,6 @@ vendor/etc/init/android.hardware.identity-service.beanpod.rc
 vendor/etc/init/android.hardware.media.c2-mediatek-64b.rc
 vendor/etc/init/android.hardware.secure_element@1.2-service-mediatek.rc
 vendor/etc/init/android.hardware.security.keymint-service.beanpod.rc
-vendor/etc/init/android.hardware.wifi-service-lazy.rc:vendor/etc/init/android.hardware.wifi-service-lazy-stock.rc
 vendor/etc/init/android.hardware.wifi.supplicant-service.rc:vendor/etc/init/android.hardware.wifi.supplicant-service-stock.rc
 vendor/etc/init/atcid.rc
 vendor/etc/init/audiocmdservice_atci.rc
@@ -701,7 +699,6 @@ vendor/etc/vintf/manifest/android.hardware.identity-service.beanpod.xml
 vendor/etc/vintf/manifest/android.hardware.security.keymint-service.beanpod.xml
 vendor/etc/vintf/manifest/android.hardware.security.secureclock-service.beanpod.xml
 vendor/etc/vintf/manifest/android.hardware.security.sharedsecret-service.beanpod.xml
-vendor/etc/vintf/manifest/android.hardware.wifi-service.xml:vendor/etc/vintf/manifest/android.hardware.wifi-service.aura.xml
 vendor/etc/vintf/manifest/android.hardware.wifi.hostapd.xml:vendor/etc/vintf/manifest/android.hardware.wifi.hostapd.aura.xml
 vendor/etc/vintf/manifest/android.hardware.wifi.supplicant.xml:vendor/etc/vintf/manifest/android.hardware.wifi.supplicant.aura.xml
 vendor/etc/vintf/manifest/bluetooth_audio.xml:vendor/etc/vintf/manifest/bluetooth_audio.aura.xml
@@ -727,6 +724,10 @@ vendor/etc/vintf/manifest/vibrator-mtk-default.xml
 vendor/etc/wifi/p2p_supplicant_overlay.conf
 vendor/etc/wifi/wpa_supplicant.conf
 vendor/etc/wifi/wpa_supplicant_overlay.conf
+
+# Wi-Fi vendor HAL
+# Preserve the original SONAME and bytes; the existing wrapper dlopens this name.
+vendor/lib64/libwifi-hal.so:vendor/lib64/libwifi-hal-mtk.so;DISABLE_CHECKELF
 
 # Firmware
 vendor/firmware/100_Haptic.bin
@@ -1462,7 +1463,6 @@ vendor/lib64/libvp8dec_sa.ca7.so
 vendor/lib64/libvpu.so
 vendor/lib64/libvpu5.so
 vendor/lib64/libwapi.so
-vendor/lib64/libwifi-hal.so
 vendor/lib64/libwifinvram.so
 vendor/lib64/libwifinvramdata.so
 vendor/lib64/libwifitest.so

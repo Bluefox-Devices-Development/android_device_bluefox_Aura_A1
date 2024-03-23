@@ -226,5 +226,20 @@ BOARD_AVB_VENDOR_DLKM_ADD_HASHTREE_FOOTER_ARGS += --hash_algorithm sha256
 BOARD_AVB_ODM_DLKM_ADD_HASHTREE_FOOTER_ARGS += --hash_algorithm sha256
 BOARD_AVB_SYSTEM_DLKM_ADD_HASHTREE_FOOTER_ARGS += --hash_algorithm sha256
 
+# Wi-Fi
+WIFI_DRIVER_FW_PATH_STA := "STA"
+WIFI_DRIVER_FW_PATH_AP := "AP"
+WIFI_DRIVER_FW_PATH_P2P := "P2P"
+WIFI_DRIVER_FW_PATH_PARAM := "/dev/wmtWifi"
+WIFI_DRIVER_STATE_CTRL_PARAM := "/dev/wmtWifi"
+WIFI_DRIVER_STATE_ON := "1"
+WIFI_DRIVER_STATE_OFF := "0"
+
+# Match the production HAL: AP, STA + AP, or STA + P2P, all in mode 3.
+WIFI_HAL_INTERFACE_COMBINATIONS := \
+    {{{AP}, 1}}, \
+    {{{STA}, 1}, {{AP}, 1}}, \
+    {{{STA}, 1}, {{P2P}, 1}}
+
 # Inherit proprietary files
 include vendor/bluefox/Aura_A1/BoardConfigVendor.mk
