@@ -169,17 +169,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider-V3-ndk \
     android.hardware.graphics.common-V6-ndk \
     android.media.audio.common.types-V3-ndk \
-    hfp_codec_capabilities_xml \
-    libhapticgeneratoraidl
-
-# Common AIDL software effects. Device-specific processing stays proprietary.
-PRODUCT_PACKAGES += \
-    libvisualizeraidl \
-    libbundleaidl \
-    libreverbaidl \
-    libdynamicsprocessingaidl \
-    libloudnessenhanceraidl \
-    libdownmixaidl
+    hfp_codec_capabilities_xml
 
 # Generic USB audio module used by the proprietary AIDL audio stack.
 PRODUCT_PACKAGES += audio.usb.default

@@ -171,6 +171,19 @@ def fix_ov64b40_pdaf_geometry(ctx, file, file_path, **_):
 
 
 blob_fixups: blob_fixups_user_type = {
+    (
+        'vendor/lib64/soundfx/libbundleaidl_prebuilt.so',
+        'vendor/lib64/soundfx/libdownmixaidl_prebuilt.so',
+        'vendor/lib64/soundfx/libdynamicsprocessingaidl_prebuilt.so',
+        'vendor/lib64/soundfx/libhapticgeneratoraidl_prebuilt.so',
+        'vendor/lib64/soundfx/libloudnessenhanceraidl_prebuilt.so',
+        'vendor/lib64/soundfx/libreverbaidl_prebuilt.so',
+        'vendor/lib64/soundfx/libvisualizeraidl_prebuilt.so',
+    ): blob_fixup()
+        .replace_needed(
+            'libaudio_aidl_conversion_common_ndk.so',
+            'libaudio_aidl_conversion_common_ndk_prebuilt.so',
+        ),
     'system_ext/priv-app/MtkTelephonyAssist/MtkTelephonyAssist.apk': blob_fixup()
         .apktool_patch('blob-patches/MtkTelephonyAssist'),
     'system_ext/priv-app/ImsService/ImsService.apk': blob_fixup()
@@ -178,6 +191,13 @@ blob_fixups: blob_fixups_user_type = {
     'system_ext/lib64/libimsma.so': blob_fixup()
         .replace_needed('libsink.so', 'libsink-mtk.so'),
     'vendor/etc/audio_effects_config.xml': blob_fixup()
+        .regex_replace(r'libbundleaidl\.so', 'libbundleaidl_prebuilt.so')
+        .regex_replace(r'libdownmixaidl\.so', 'libdownmixaidl_prebuilt.so')
+        .regex_replace(r'libdynamicsprocessingaidl\.so', 'libdynamicsprocessingaidl_prebuilt.so')
+        .regex_replace(r'libhapticgeneratoraidl\.so', 'libhapticgeneratoraidl_prebuilt.so')
+        .regex_replace(r'libloudnessenhanceraidl\.so', 'libloudnessenhanceraidl_prebuilt.so')
+        .regex_replace(r'libreverbaidl\.so', 'libreverbaidl_prebuilt.so')
+        .regex_replace(r'libvisualizeraidl\.so', 'libvisualizeraidl_prebuilt.so')
         .regex_replace(
             r'(?m)^[ \t]*<library name="erasersw" path="liberasersw\.so"/>'
             r'[ \t]*\r?\n',
