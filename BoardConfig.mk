@@ -167,5 +167,11 @@ TARGET_RECOVERY_UI_BRIGHTNESS_NORMAL := 50
 TARGET_RECOVERY_UI_BRIGHTNESS_DIMMED := 25
 TARGET_SCREEN_DENSITY := 320
 
+# SELinux
+BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
+
+include device/mediatek/sepolicy_vndr/SEPolicy.mk
+
 # Inherit proprietary files
 include vendor/bluefox/Aura_A1/BoardConfigVendor.mk
