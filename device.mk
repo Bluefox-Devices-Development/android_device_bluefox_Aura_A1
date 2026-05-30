@@ -118,6 +118,11 @@ $(call inherit-product, hardware/mediatek/frameworks/mediatek-frameworks.mk)
 
 include hardware/mediatek/configs/properties/vendor_logtag.mk
 
+# IMS
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/permissions/privapp-permissions-com.mediatek.ims.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-com.mediatek.ims.xml \
+    $(DEVICE_PATH)/configs/permissions/privapp-permissions-com.mediatek.telephony.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-com.mediatek.telephony.xml
+
 # Enforce the stock 202504 device contract during the build. HAL-specific
 # fragments remain owned by their implementation packages and are not copied
 # here, which prevents duplicate declarations when proprietary HALs are added.
