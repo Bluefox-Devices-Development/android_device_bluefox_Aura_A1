@@ -192,6 +192,8 @@ def write_page_size_4k_exceptions(ctx, packages_ctx):
 blob_fixups: blob_fixups_user_type = {
     'system_ext/priv-app/MtkTelephonyAssist/MtkTelephonyAssist.apk': blob_fixup()
         .apktool_patch('blob-patches/MtkTelephonyAssist'),
+    'system_ext/priv-app/ImsService/ImsService.apk': blob_fixup()
+        .apktool_patch('blob-patches/ImsService'),
     'system_ext/lib64/libimsma.so': blob_fixup()
         .replace_needed('libsink.so', 'libsink-mtk.so'),
     'vendor/etc/audio_effects_config.xml': blob_fixup()
