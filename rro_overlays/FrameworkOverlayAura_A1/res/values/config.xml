@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <bool name="config_powerDecoupleAutoSuspendModeFromDisplay">true</bool>
+    <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
+    <bool name="config_showNavigationBar">true</bool>
+    <bool name="config_supportsMicToggle">true</bool>
+
+    <integer name="config_num_physical_slots">2</integer>
+    <integer name="config_screenBrightnessDoze">5</integer>
+
+    <string name="config_displayLightSensorType" translatable="false">android.sensor.light</string>
+</resources>

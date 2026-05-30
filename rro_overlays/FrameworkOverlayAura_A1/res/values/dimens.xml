@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <item name="config_screenBrightnessSettingDefaultFloat" type="dimen" format="float">0.4</item>
+    <item name="config_screenBrightnessSettingMaximumFloat" type="dimen" format="float">1.0</item>
+    <item name="config_screenBrightnessSettingMinimumFloat" type="dimen" format="float">0.0</item>
+</resources>
