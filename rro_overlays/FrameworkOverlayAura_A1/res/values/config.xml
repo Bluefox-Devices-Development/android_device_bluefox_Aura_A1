@@ -15,4 +15,5 @@
     <integer name="config_screenBrightnessDoze">5</integer>
 
     <string name="config_displayLightSensorType" translatable="false">android.sensor.light</string>
+    <string name="config_mainBuiltInDisplayCutout" translatable="false">M -42 0 H 42 V 96 H -42 Z</string>
 </resources>

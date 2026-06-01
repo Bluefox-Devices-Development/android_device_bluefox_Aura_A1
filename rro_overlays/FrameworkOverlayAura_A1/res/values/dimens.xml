@@ -7,4 +7,7 @@
     <item name="config_screenBrightnessSettingDefaultFloat" type="dimen" format="float">0.4</item>
     <item name="config_screenBrightnessSettingMaximumFloat" type="dimen" format="float">1.0</item>
     <item name="config_screenBrightnessSettingMinimumFloat" type="dimen" format="float">0.0</item>
+
+    <dimen name="status_bar_height_landscape">28dp</dimen>
+    <dimen name="status_bar_height_portrait">48dp</dimen>
 </resources>
