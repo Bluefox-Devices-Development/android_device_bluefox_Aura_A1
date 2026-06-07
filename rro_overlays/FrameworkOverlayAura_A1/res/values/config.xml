@@ -5,6 +5,7 @@
 -->
 <resources>
     <bool name="config_automatic_brightness_available">true</bool>
+    <bool name="config_enableWifiDisplay">true</bool>
     <bool name="config_powerDecoupleAutoSuspendModeFromDisplay">true</bool>
     <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
     <bool name="config_showNavigationBar">true</bool>
