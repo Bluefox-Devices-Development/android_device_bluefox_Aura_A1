@@ -87,6 +87,7 @@ BOARD_BOOTCONFIG := \
     kernel.rcu_nocbs=all \
     kernel.rcutree.enable_rcu_lazy=1 \
     kernel.rcupdate.rcu_cpu_stall_cputime=1
+BOARD_BOOTCONFIG += androidboot.serialconsole=0
 
 BOARD_RAMDISK_USE_LZ4 := true
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
