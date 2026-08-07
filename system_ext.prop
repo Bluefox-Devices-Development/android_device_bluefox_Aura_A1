@@ -1,0 +1,33 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# Audio
+ro.audio.ihaladaptervendorextension_enabled=true
+ro.audio.usb.period_us=16000
+ro.audio.flinger_standbytime_ms=1000
+ro.config.vc_call_vol_default=14
+ro.config.vc_call_vol_steps=15
+ro.config.media_vol_default=14
+ro.config.media_vol_steps=15
+ro.config.alarm_vol_default=14
+ro.config.alarm_vol_steps=15
+vendor.af.threshold.src_and_effect_count=5
+vendor.af.pausewait.enable=false
+vendor.af.dynamic.sleeptime.enable=true
+
+# Radio framework
+vendor.rild.libpath=mtk-ril.so
+vendor.rild.libargs=-d /dev/ttyC0
+ro.vendor.mtk_telephony_add_on_policy=0
+persist.vendor.wfc.sys_wfc_support=0
+persist.mtk_telecom_max_ringingcall_number=1
+
+# MediaTek Wi-Fi framework compatibility
+wifi.interface=wlan0
+wifi.tethering.interface=ap0
+wifi.direct.interface=p2p0
+ro.mediatek.wlan.wsc=1
+ro.mediatek.wlan.p2p=1
+mediatek.wlan.ctia=0

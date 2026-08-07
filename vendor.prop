@@ -1,0 +1,23 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# Init and storage
+ro.vendor.rc=/vendor/etc/init/hw/
+ro.vendor.init.sensor.rc=init.sensor_2_0.rc
+ro.vendor.mtk_f2fs_enable=1
+ro.crypto.volume.filenames_mode=aes-256-cts
+ro.frp.pst=/dev/block/by-name/frp
+ro.oem_unlock_supported=1
+persist.adb.nonblocking_ffs=0
+
+# DRM
+drm.service.enabled=true
+
+# Device hardware
+ro.hardware.consumerir=common
+ro.vendor.mtk.sensor.support=yes
+ro.vendor.mtk_thermal_2_0=1
+ro.vendor.mtk_fast_charging_support=1
+ro.vendor.usb.kpoc_adb=0
