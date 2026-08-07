@@ -1,0 +1,2 @@
+allow mtk_hal_usb sysfs_extcon:dir search;
+allow mtk_hal_usb sysfs_extcon:file rw_file_perms;
