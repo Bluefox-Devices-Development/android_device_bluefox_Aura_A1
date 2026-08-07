@@ -1,0 +1,3 @@
+allow mnld gpsmdl_state_device:chr_file rw_file_perms_no_map;
+allow mnld gpsmdl_device:chr_file rw_file_perms_no_map;
+allow mnld gpsstrg_device:chr_file rw_file_perms_no_map;
