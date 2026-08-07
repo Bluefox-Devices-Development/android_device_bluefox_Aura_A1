@@ -1,0 +1,2 @@
+type ff_data_file, file_type, data_file_type;
+type tmsdev_proc_file, fs_type, proc_type;

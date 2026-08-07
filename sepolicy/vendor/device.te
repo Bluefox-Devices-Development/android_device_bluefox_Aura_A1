@@ -1,0 +1,7 @@
+type aol_flp_device, dev_type;
+type dmabuf_mtk_slc_heap_device, dev_type, dmabuf_heap_device_type;
+type ff_device, dev_type;
+type gpsmdl_state_device, dev_type;
+type gpsmdl_device, dev_type;
+type gpsstrg_device, dev_type;
+type mtk_disp_sync_device, dev_type;

@@ -1,0 +1,26 @@
+/(vendor|system/vendor)/bin/hw/android\.hardware\.drm-service\.clearkey-stock u:object_r:hal_drm_clearkey_aidl_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.gatekeeper-service\.beanpod u:object_r:hal_gatekeeper_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint-service u:object_r:hal_fingerprint_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.identity-service\.beanpod u:object_r:hal_identity_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.nfc-service-tms u:object_r:hal_nfc_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.security\.keymint@4\.0-service\.beanpod u:object_r:hal_keymint_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.usb-aidl-service\.mediatek u:object_r:mtk_hal_usb_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.usb\.gadget-aidl-service\.mediatek u:object_r:mtk_hal_usb_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.wifi-service-lazy-stock u:object_r:hal_wifi_default_exec:s0
+/(vendor|system/vendor)/bin/hw/wpa_supplicant-stock u:object_r:hal_wifi_supplicant_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.mediatek\.hardware\.gnss-service u:object_r:mtk_hal_batching_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.microtrust\.hardware\.thh-service u:object_r:teei_hal_thh_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.microtrust\.hardware\.widevine@1\.0-service\.beanpod u:object_r:hal_teei_widevine_default_exec:s0
+/(vendor|system/vendor)/bin/mt6789/v3avpud-64b\.mt6789 u:object_r:vpud_native_exec:s0
+
+/data/vendor/focaltech(/.*)? u:object_r:ff_data_file:s0
+
+/dev/aol_flp u:object_r:aol_flp_device:s0
+/dev/disp_sync(/.*)? u:object_r:mtk_disp_sync_device:s0
+/dev/dma_heap/mtk_slc u:object_r:dmabuf_mtk_slc_heap_device:s0
+/dev/focaltech_fp u:object_r:ff_device:s0
+/dev/gpsmdl-state u:object_r:gpsmdl_state_device:s0
+/dev/gpsmdl.*(/.*)? u:object_r:gpsmdl_device:s0
+/dev/gpsstrg.*(/.*)? u:object_r:gpsstrg_device:s0
+/dev/tms_nfc u:object_r:nfc_device:s0
+/dev/trusty-ipc-dev1 u:object_r:tee_device:s0

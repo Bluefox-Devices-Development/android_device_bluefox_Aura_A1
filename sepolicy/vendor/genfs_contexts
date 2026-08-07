@@ -1,0 +1,2 @@
+genfscon proc /tmsdev/logger u:object_r:tmsdev_proc_file:s0
+genfscon proc /tmsdev/shutdown u:object_r:tmsdev_proc_file:s0
