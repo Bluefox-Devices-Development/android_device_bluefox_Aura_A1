@@ -1,0 +1,29 @@
+# Stock-derived Aura A1 fstab for the Lineage Recovery environment.
+# Only verified runtime filesystems, boot-chain partitions and removable media
+# are exposed here. Device-unique calibration and security partitions are
+# intentionally omitted.
+
+system /system erofs ro wait,slotselect,avb=vbmeta_system,logical,first_stage_mount,avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey
+system_ext /system_ext erofs ro wait,slotselect,avb=vbmeta_system,logical,first_stage_mount,avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey
+product /product erofs ro wait,slotselect,avb=vbmeta_system,logical,first_stage_mount
+vendor /vendor erofs ro wait,slotselect,avb,logical,first_stage_mount
+system_dlkm /system_dlkm erofs ro wait,slotselect,avb,logical,first_stage_mount
+vendor_dlkm /vendor_dlkm erofs ro wait,slotselect,avb,logical,first_stage_mount
+odm_dlkm /odm_dlkm erofs ro wait,slotselect,avb,logical,first_stage_mount
+
+/dev/block/by-name/metadata /metadata f2fs noatime,nosuid,nodev,discard wait,check,formattable,first_stage_mount
+/dev/block/by-name/userdata /data f2fs noatime,nosuid,nodev,discard,noflush_merge,fsync_mode=nobarrier,reserve_root=134217,resgid=1065,inlinecrypt wait,check,formattable,quota,latemount,resize,reservedsize=128m,checkpoint=fs,fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized,keydirectory=/metadata/vold/metadata_encryption,fsverity
+
+/dev/block/by-name/boot /boot emmc defaults recoveryonly,slotselect
+/dev/block/by-name/vendor_boot /vendor_boot emmc defaults recoveryonly,slotselect
+/dev/block/by-name/init_boot /init_boot emmc defaults recoveryonly,slotselect
+/dev/block/by-name/dtbo /dtbo emmc defaults recoveryonly,slotselect
+/dev/block/by-name/vbmeta /vbmeta emmc defaults recoveryonly,slotselect
+/dev/block/by-name/vbmeta_system /vbmeta_system emmc defaults recoveryonly,slotselect
+/dev/block/by-name/vbmeta_vendor /vbmeta_vendor emmc defaults recoveryonly,slotselect
+/dev/block/by-name/misc /misc emmc defaults recoveryonly
+
+/devices/platform/soc/11240000.mmc* /external_sd auto defaults voldmanaged=sdcard1:auto
+/devices/platform/soc/soc:odm/11230000.msdc* /external_sd auto defaults voldmanaged=sdcard1:auto
+/devices/platform/soc/11230000.mmc* /external_sd auto defaults voldmanaged=sdcard1:auto
+/devices/platform/soc/mt_usb* /usb-otg auto defaults voldmanaged=usb-otg:auto

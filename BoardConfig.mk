@@ -154,5 +154,18 @@ TARGET_VENDOR_PROP += \
     $(DEVICE_PATH)/vendor-platform.prop \
     $(DEVICE_PATH)/vendor.prop
 
+# Recovery
+TARGET_RECOVERY_DEVICE_DIRS := $(DEVICE_PATH)
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
+TARGET_RECOVERY_DENSITY := xhdpi
+TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
+TARGET_RECOVERY_UI_SCREEN_WIDTH := 720
+TARGET_RECOVERY_UI_MARGIN_HEIGHT := 96
+TARGET_RECOVERY_UI_BRIGHTNESS_FILE := /sys/class/leds/lcd-backlight/brightness
+TARGET_RECOVERY_UI_MAX_BRIGHTNESS_FILE := /sys/class/leds/lcd-backlight/max_brightness
+TARGET_RECOVERY_UI_BRIGHTNESS_NORMAL := 50
+TARGET_RECOVERY_UI_BRIGHTNESS_DIMMED := 25
+TARGET_SCREEN_DENSITY := 320
+
 # Inherit proprietary files
 include vendor/bluefox/Aura_A1/BoardConfigVendor.mk

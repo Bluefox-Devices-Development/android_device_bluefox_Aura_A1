@@ -1,0 +1,20 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+on early-init
+    # The controller is provided by the stock vendor ramdisk module set.
+    write /sys/module/musb_hdrc/parameters/kernel_init_done 1
+
+on fs
+    # Some recovery tools still use the legacy bootdevice paths. Ueventd
+    # exposes this UFS controller only through its platform path.
+    wait /dev/block/platform/soc/11270000.ufshci/by-name
+    symlink /dev/block/platform/soc/11270000.ufshci /dev/block/bootdevice
+    symlink /dev/block/platform/soc/11270000.ufshci /dev/block/platform/bootdevice
+
+on init
+    setprop sys.usb.configfs 1
+    setprop sys.usb.controller musb-hdrc
+    setprop sys.usb.ffs.aio_compat 0
