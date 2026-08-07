@@ -1,0 +1,10 @@
+add_service(hal_fingerprint_server, focaltech_fp_service)
+
+vndbinder_use(hal_fingerprint_default)
+
+allow hal_fingerprint_default ff_data_file:dir create_dir_perms;
+allow hal_fingerprint_default ff_data_file:file create_file_perms;
+allow hal_fingerprint_default ff_device:chr_file rw_file_perms;
+allow hal_fingerprint_default ff_service:service_manager { add find };
+allow hal_fingerprint_default self:binder call;
+allow hal_fingerprint_default self:netlink_kobject_uevent_socket { bind create read setopt };
