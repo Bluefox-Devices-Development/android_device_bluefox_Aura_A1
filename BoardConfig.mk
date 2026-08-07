@@ -116,6 +116,37 @@ TARGET_USERIMAGES_USE_F2FS := true
 
 -include vendor/lineage/config/BoardConfigReservedSize.mk
 
+# Kernel
+TARGET_KERNEL_DIR := $(KERNEL_PATH)/6.12
+BOARD_KERNEL_IMAGE_NAME := Image.lz4
+TARGET_PREBUILT_KERNEL := $(TARGET_KERNEL_DIR)/$(BOARD_KERNEL_IMAGE_NAME)
+
+BOARD_INCLUDE_DTB_IN_BOOTIMG := true
+BOARD_PREBUILT_DTBIMAGE_DIR := $(TARGET_KERNEL_DIR)/dtb
+BOARD_KERNEL_SEPARATED_DTBO := true
+BOARD_PREBUILT_DTBOIMAGE := $(TARGET_KERNEL_DIR)/dtbo.img
+
+TARGET_PROVIDES_STATIC_MODULE_LISTS := true
+
+SYSTEM_DLKM_MODULE_DIR := $(TARGET_KERNEL_DIR)/system_dlkm/lib/modules
+VENDOR_DLKM_MODULE_DIR := $(TARGET_KERNEL_DIR)/vendor_dlkm/lib/modules
+VENDOR_RAMDISK_MODULE_DIR := $(TARGET_KERNEL_DIR)/vendor_ramdisk/lib/modules
+
+BOARD_SYSTEM_KERNEL_MODULES_LOAD := $(strip $(shell cat $(SYSTEM_DLKM_MODULE_DIR)/modules.load))
+BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(VENDOR_DLKM_MODULE_DIR)/modules.load))
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(VENDOR_RAMDISK_MODULE_DIR)/modules.load))
+BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(VENDOR_RAMDISK_MODULE_DIR)/modules.load.recovery))
+
+# Package every stock module. The load lists remain separate because MediaTek
+# also loads some vendor_dlkm modules dynamically from init.
+BOARD_SYSTEM_KERNEL_MODULES := $(wildcard $(SYSTEM_DLKM_MODULE_DIR)/*.ko)
+BOARD_VENDOR_KERNEL_MODULES := $(wildcard $(VENDOR_DLKM_MODULE_DIR)/*.ko)
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(wildcard $(VENDOR_RAMDISK_MODULE_DIR)/*.ko)
+
+# Preserve the stock module bytes and relocations.
+BOARD_DO_NOT_STRIP_VENDOR_MODULES := true
+BOARD_DO_NOT_STRIP_VENDOR_RAMDISK_MODULES := true
+
 # Properties
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
 TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/system_ext.prop
