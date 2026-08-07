@@ -1,0 +1,5 @@
+add_service(hal_nfc_default, tmsnfc_aidl_service)
+
+allow hal_nfc_default tmsdev_proc_file:file { getattr open read };
+
+set_prop(hal_nfc_default, vendor_tms_nfc_prop)
