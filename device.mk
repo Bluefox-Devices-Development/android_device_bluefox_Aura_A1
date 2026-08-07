@@ -126,6 +126,28 @@ PRODUCT_PACKAGES += \
     hfp_codec_capabilities_xml \
     libhapticgeneratoraidl
 
+# A/B and recovery
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth-service.mediatek \
+    android.hardware.boot-service.mediatek \
+    android.hardware.boot-service.mediatek_recovery \
+    android.hardware.health-service.mediatek \
+    android.hardware.health-service.mediatek-recovery \
+    android.hardware.ir-service.example \
+    android.hardware.memtrack-service.mediatek \
+    android.hardware.sensors-service.multihal \
+    chipinfo \
+    create_pl_dev \
+    create_pl_dev.recovery \
+    fastbootd \
+    recovery \
+    update_engine \
+    update_engine_sideload \
+    update_verifier
+
+PRODUCT_PACKAGES_DEBUG += \
+    bootctl
+
 # Keep the normal-boot fstab in both locations used by first- and second-stage
 # init. Recovery uses a separate restricted fstab that omits sensitive device
 # data partitions.
