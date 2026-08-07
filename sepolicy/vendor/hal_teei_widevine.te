@@ -1,0 +1,3 @@
+hal_attribute(teei_widevine)
+
+hal_attribute_service(hal_teei_widevine, hal_teei_widevine_service)
