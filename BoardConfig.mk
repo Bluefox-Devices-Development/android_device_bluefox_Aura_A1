@@ -173,5 +173,28 @@ SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 
 include device/mediatek/sepolicy_vndr/SEPolicy.mk
 
+# Verified Boot
+BOARD_AVB_ENABLE := true
+BOARD_AVB_ALGORITHM := SHA256_RSA2048
+# This AOSP public test key is suitable only for unlocked-device bring-up.
+BOARD_AVB_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
+
+# Aura uses physical vbmeta_system and vbmeta_vendor A/B partitions. Keep the
+# chained images split like the stock mount contract so target-files and OTA
+# payloads always contain both images. The rollback-index locations are
+# bring-up values and must be compared with the stock descriptors before any
+# AVB-locked installation is supported.
+BOARD_AVB_VBMETA_SYSTEM := product system system_ext
+BOARD_AVB_VBMETA_SYSTEM_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
+BOARD_AVB_VBMETA_SYSTEM_ALGORITHM := SHA256_RSA2048
+BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
+BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 1
+
+BOARD_AVB_VBMETA_VENDOR := vendor
+BOARD_AVB_VBMETA_VENDOR_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
+BOARD_AVB_VBMETA_VENDOR_ALGORITHM := SHA256_RSA2048
+BOARD_AVB_VBMETA_VENDOR_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
+BOARD_AVB_VBMETA_VENDOR_ROLLBACK_INDEX_LOCATION := 2
+
 # Inherit proprietary files
 include vendor/bluefox/Aura_A1/BoardConfigVendor.mk
