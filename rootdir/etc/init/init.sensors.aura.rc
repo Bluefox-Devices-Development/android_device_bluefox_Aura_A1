@@ -1,0 +1,9 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# Preserve the device-specific timeout from the stock sensors service rc while
+# the common AIDL multihal service and its VINTF fragment are built from source.
+on boot
+    setprop vendor.sensors.dynamic_sensor_op_timeout_ms 1600

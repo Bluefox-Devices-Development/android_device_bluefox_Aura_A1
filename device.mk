@@ -96,5 +96,15 @@ $(call inherit-product, hardware/mediatek/frameworks/mediatek-frameworks.mk)
 
 include hardware/mediatek/configs/properties/vendor_logtag.mk
 
+# Keep the normal-boot fstab in both locations used by first- and second-stage
+# init. Recovery uses a separate restricted fstab that omits sensitive device
+# data partitions.
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/rootdir/etc/init/init.nfc.tms.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.nfc.tms.rc \
+    $(DEVICE_PATH)/rootdir/etc/init/init.sensors.aura.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.sensors.aura.rc \
+    $(DEVICE_PATH)/rootdir/etc/fstab.enableswap:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.enableswap \
+    $(DEVICE_PATH)/rootdir/etc/fstab.mt6789:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt6789 \
+    $(DEVICE_PATH)/rootdir/etc/fstab.mt6789:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.mt6789
+
 # Inherit proprietary files
 $(call inherit-product, vendor/bluefox/Aura_A1/Aura_A1-vendor.mk)
