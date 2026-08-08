@@ -90,6 +90,20 @@ PRODUCT_BUILD_SUPER_PARTITION := false
 ENABLE_VENDOR_RIL_SERVICE := true
 TARGET_BOARD_PLATFORM := mt6789
 
+# The product launches on API 36, but its vendor contract starts at API 31 and
+# still exposes legacy HIDL services. Select the compatibility runtime
+# explicitly because the platform's shipping-API gate would otherwise omit it.
+PRODUCT_PACKAGES += \
+    android.hidl.allocator@1.0-service \
+    android.hidl.memory@1.0-impl \
+    android.hidl.memory@1.0-impl.vendor \
+    hwservicemanager \
+    vndservicemanager
+
+# Keep the stock board-specific USB init policy instead of the generic
+# MediaTek gadget fallback.
+$(call soong_config_set_bool,mediatek_gadget,use_custom_usb_gadget_rc,true)
+
 $(call inherit-product, hardware/mediatek/overlay/mssi.mk)
 $(call inherit-product, hardware/lineage/compat/frameworks/compat.mk)
 $(call inherit-product, hardware/mediatek/frameworks/mediatek-frameworks.mk)
