@@ -1,0 +1,2 @@
+hal_attribute_service(hal_mtk_apm, mtk_hal_apm_service)
+binder_use(hal_mtk_apm_client)

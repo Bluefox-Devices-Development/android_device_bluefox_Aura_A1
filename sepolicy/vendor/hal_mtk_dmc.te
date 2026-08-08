@@ -1,0 +1,2 @@
+hal_attribute_service(hal_mtk_dmc, mtk_hal_dmc_service)
+binder_use(hal_mtk_dmc_client)

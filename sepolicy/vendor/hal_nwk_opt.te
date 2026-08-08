@@ -1,0 +1,2 @@
+hal_attribute_service(hal_nwk_opt, mtk_hal_nwk_opt_service)
+binder_use(hal_nwk_opt_server)
