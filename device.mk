@@ -110,6 +110,22 @@ $(call inherit-product, hardware/mediatek/frameworks/mediatek-frameworks.mk)
 
 include hardware/mediatek/configs/properties/vendor_logtag.mk
 
+# Audio effects
+PRODUCT_PACKAGES += \
+    aidl_audio_set_configurations_bfbs \
+    aidl_audio_set_scenarios_bfbs \
+    android.hardware.audio.parameter_parser.example_service \
+    android.hardware.audio.common-V3-ndk \
+    android.hardware.audio.effect-V2-ndk \
+    android.hardware.bluetooth.audio-V4-ndk \
+    android.hardware.camera.common-V2-ndk \
+    android.hardware.camera.device-V3-ndk \
+    android.hardware.camera.provider-V3-ndk \
+    android.hardware.graphics.common-V6-ndk \
+    android.media.audio.common.types-V3-ndk \
+    hfp_codec_capabilities_xml \
+    libhapticgeneratoraidl
+
 # Keep the normal-boot fstab in both locations used by first- and second-stage
 # init. Recovery uses a separate restricted fstab that omits sensitive device
 # data partitions.
