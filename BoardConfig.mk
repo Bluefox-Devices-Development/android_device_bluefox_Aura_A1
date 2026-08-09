@@ -44,6 +44,21 @@ DEVICE_MATRIX_FILE := $(DEVICE_PATH)/vintf/compatibility_matrix.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(DEVICE_PATH)/vintf/framework_compatibility_matrix.xml
 
+# The stock vendor image carries radio manifests for every supported modem
+# SKU under vendor/odm. Keep these as build-time inputs so assemble_vintf can
+# validate and install every variant; libvintf selects the bootloader-selected
+# SKU at runtime.
+ODM_MANIFEST_SKUS := \
+    dsds \
+    qsqs \
+    ss \
+    tsts
+
+ODM_MANIFEST_DSDS_FILES := $(DEVICE_PATH)/odm/manifest_dsds.xml
+ODM_MANIFEST_QSQS_FILES := $(DEVICE_PATH)/odm/manifest_qsqs.xml
+ODM_MANIFEST_SS_FILES := $(DEVICE_PATH)/odm/manifest_ss.xml
+ODM_MANIFEST_TSTS_FILES := $(DEVICE_PATH)/odm/manifest_tsts.xml
+
 # Bootloader
 BOARD_VENDOR := bluefox
 TARGET_BOOTLOADER_BOARD_NAME := k6789v1_64
