@@ -123,6 +123,11 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/permissions/privapp-permissions-com.mediatek.ims.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-com.mediatek.ims.xml \
     $(DEVICE_PATH)/configs/permissions/privapp-permissions-com.mediatek.telephony.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-com.mediatek.telephony.xml
 
+# The minimal proprietary closure does not ship MediaTek's legacy IWLAN
+# framework classes. Keep the platform defaults instead of installing an
+# overlay that points to unavailable implementations.
+PRODUCT_PACKAGES_EXCLUDE += MssiFrameworkTelephonyOverlay
+
 # Enforce the stock 202504 device contract during the build. HAL-specific
 # fragments remain owned by their implementation packages and are not copied
 # here, which prevents duplicate declarations when proprietary HALs are added.
