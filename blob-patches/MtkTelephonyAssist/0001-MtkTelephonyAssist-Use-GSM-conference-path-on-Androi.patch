@@ -1,0 +1,37 @@
+From e8050fad65fa116ee6abeff7bbce095d069a89e6 Mon Sep 17 00:00:00 2001
+From: EdwardWu <bluehome.wu@gmail.com>
+Date: Sun, 9 Aug 2026 22:52:48 +0800
+Subject: [PATCH] MtkTelephonyAssist: Use GSM conference path on Android 16
+
+Android 16 removed the legacy CDMA phone-type helpers. Aura A1 uses the GSM path, so replace both checks with false and retain the stock conference flow.
+
+Signed-off-by: EdwardWu <bluehome.wu@gmail.com>
+---
+ .../mediatek/telephony/SpecialCommandsController.smali    | 8 ++------
+ 1 file changed, 2 insertions(+), 6 deletions(-)
+
+diff --git a/smali/com/mediatek/telephony/SpecialCommandsController.smali b/smali/com/mediatek/telephony/SpecialCommandsController.smali
+index 20120cd..ec573ce 100644
+--- a/smali/com/mediatek/telephony/SpecialCommandsController.smali
++++ b/smali/com/mediatek/telephony/SpecialCommandsController.smali
+@@ -1912,15 +1912,11 @@
+ 
+     .line 226
+     :try_start_0
+-    invoke-virtual {v5}, Lcom/android/internal/telephony/GsmCdmaPhone;->isPhoneTypeCdmaLte()Z
+-
+-    move-result v1
++    const/4 v1, 0x0
+ 
+     if-nez v1, :cond_4
+ 
+-    invoke-virtual {v5}, Lcom/android/internal/telephony/GsmCdmaPhone;->isPhoneTypeCdma()Z
+-
+-    move-result v1
++    const/4 v1, 0x0
+ 
+     if-eqz v1, :cond_3
+ 
+-- 
+2.53.0
+
