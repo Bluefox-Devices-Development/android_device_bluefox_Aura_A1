@@ -4,6 +4,33 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
+    <string-array name="config_angleAllowList" translatable="false">
+        <item>com.dreamgames.royalmatch</item>
+        <item>com.dts.freefiremax</item>
+        <item>com.dxx.firenow</item>
+        <item>com.gramgames.mergedragons</item>
+        <item>com.ludo.king</item>
+        <item>com.mojang.minecraftpe</item>
+        <item>com.my.defense</item>
+        <item>com.nintendo.zaka</item>
+        <item>com.os.airforce</item>
+        <item>com.playrix.fishdomdd.gplay</item>
+        <item>io.teslatech.callbreak</item>
+        <item>jp.konami.prospia</item>
+        <item>net.peakgames.toonblast</item>
+    </string-array>
+
+    <string-array name="config_globalActionsList" translatable="false">
+        <item>emergency</item>
+        <item>lockdown</item>
+        <item>power</item>
+        <item>restart</item>
+        <item>logout</item>
+        <item>screenshot</item>
+        <item>bugreport</item>
+        <item>standby</item>
+    </string-array>
+
     <integer-array name="config_autoBrightnessLevels">
         <item>128</item>
         <item>256</item>
