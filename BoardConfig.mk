@@ -38,6 +38,12 @@ TARGET_SUPPORTS_64_BIT_APPS := true
 TARGET_BOARD_PLATFORM := mt6789
 TARGET_USES_VULKAN := true
 
+# VINTF
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/vintf/manifest.xml
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/vintf/compatibility_matrix.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
+    $(DEVICE_PATH)/vintf/framework_compatibility_matrix.xml
+
 # Bootloader
 BOARD_VENDOR := bluefox
 TARGET_BOOTLOADER_BOARD_NAME := k6789v1_64
