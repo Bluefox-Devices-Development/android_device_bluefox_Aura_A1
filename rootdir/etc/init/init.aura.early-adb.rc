@@ -1,0 +1,14 @@
+# Pre-arm the USB gadget before the boot event on debuggable builds. adbd
+# remains delayed until the default APEX namespace is available.
+on post-fs && property:ro.debuggable=1
+    setprop sys.usb.controller musb-hdrc
+    setprop vendor.usb.controller musb-hdrc
+    setprop sys.usb.ffs.aio_compat 0
+    setprop vendor.usb.acm_cnt 0
+    setprop vendor.usb.acm_port0 ""
+    setprop vendor.usb.acm_port1 ""
+    setprop vendor.usb.acm_enable 0
+    setprop vendor.usb.pid 0x201C
+    setprop sys.usb.configfs 1
+    setprop sys.usb.config adb
+    start adbd

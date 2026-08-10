@@ -10,6 +10,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from Aura A1.
 $(call inherit-product, device/bluefox/Aura_A1/device.mk)
 
+# Keep ADB available during device bring-up.
+WITH_ADB_INSECURE := true
+
 # Inherit common LineageOS phone configuration.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
