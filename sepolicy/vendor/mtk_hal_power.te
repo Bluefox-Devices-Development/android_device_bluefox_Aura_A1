@@ -1,0 +1,3 @@
+# Allow the MTK power HAL to use the AIDL netdagent service and observe boot.
+hal_client_domain(mtk_hal_power, mtk_hal_netdagent)
+get_prop(mtk_hal_power, boot_status_prop)

@@ -189,10 +189,10 @@ TARGET_RECOVERY_UI_BRIGHTNESS_DIMMED := 25
 TARGET_SCREEN_DENSITY := 320
 
 # SELinux
+include device/mediatek/sepolicy_vndr/SEPolicy.mk
+
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
-
-include device/mediatek/sepolicy_vndr/SEPolicy.mk
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
