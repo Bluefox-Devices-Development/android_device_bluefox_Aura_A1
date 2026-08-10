@@ -1,0 +1,157 @@
+From 5e47f51ac7560bca97d6107f2184523a73ef7633 Mon Sep 17 00:00:00 2001
+From: EdwardWu <bluehome.wu@gmail.com>
+Date: Tue, 11 Aug 2026 01:25:05 +0800
+Subject: [PATCH] ImsService: Retry unsupported no-SIM emergency calls over CS
+
+The MTK IMS stack proceeds into deferred self-activation when a no-SIM
+emergency call has no IMS emergency support.  The deferred session has
+no call ID and is not marked as a pending modem call, so a subsequent
+hangup cannot complete and Telecom restores the call to DIALING.
+
+Report the platform's emergency CS-retry reason before entering the
+deferred path when the subscription is invalid and IMS emergency is not
+supported.  Preserve the original behavior for valid subscriptions.
+
+Framework silent redial marks CS-to-IMS retries explicitly.  Accept only
+that marker together with the corresponding 3001/3002 retry cause, and
+skip self-activation for the marked retry so it reaches the modem once
+instead of being redirected back to CS.
+
+Signed-off-by: EdwardWu <bluehome.wu@gmail.com>
+---
+ .../mediatek/ims/ImsCallSessionProxy.smali    | 99 ++++++++++++++++++-
+ 1 file changed, 98 insertions(+), 1 deletion(-)
+
+diff --git a/smali/com/mediatek/ims/ImsCallSessionProxy.smali b/smali/com/mediatek/ims/ImsCallSessionProxy.smali
+index 3f03eef..5267499 100644
+--- a/smali/com/mediatek/ims/ImsCallSessionProxy.smali
++++ b/smali/com/mediatek/ims/ImsCallSessionProxy.smali
+@@ -8491,6 +8491,60 @@
+     return v0
+ .end method
+ 
++.method private isCsToImsEmergencyRetry(Landroid/telephony/ims/ImsCallProfile;)Z
++    .locals 3
++    .param p1, "profile"    # Landroid/telephony/ims/ImsCallProfile;
++
++    iget v0, p1, Landroid/telephony/ims/ImsCallProfile;->mServiceType:I
++
++    const/4 v1, 0x2
++
++    if-eq v0, v1, :cond_emergency
++
++    const/4 v0, 0x0
++
++    return v0
++
++    :cond_emergency
++    invoke-virtual {p1}, Landroid/telephony/ims/ImsCallProfile;->getProprietaryCallExtras()Landroid/os/Bundle;
++
++    move-result-object v0
++
++    const-string v1, "com.android.internal.telephony.extra.CS_TO_IMS_EMERGENCY_RETRY"
++
++    const/4 v2, 0x0
++
++    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
++
++    move-result v0
++
++    if-eqz v0, :cond_not_retry
++
++    const-string v0, "android.telephony.ims.extra.RETRY_CALL_FAIL_REASON"
++
++    invoke-virtual {p1, v0, v2}, Landroid/telephony/ims/ImsCallProfile;->getCallExtraInt(Ljava/lang/String;I)I
++
++    move-result v0
++
++    const/16 v1, 0xbb9
++
++    if-eq v0, v1, :cond_retry
++
++    const/16 v1, 0xbba
++
++    if-ne v0, v1, :cond_not_retry
++
++    :cond_retry
++    const/4 v0, 0x1
++
++    return v0
++
++    :cond_not_retry
++    const/4 v0, 0x0
++
++    return v0
++.end method
++
+ .method private isImsEccSupported()Z
+     .locals 6
+ 
+@@ -16647,7 +16690,7 @@
+ 
+     move-result v1
+ 
+-    if-eqz v1, :cond_5
++    if-eqz v1, :cond_ims_ecc_unsupported
+ 
+     .line 943
+     invoke-virtual {p0}, Lcom/mediatek/ims/ImsCallSessionProxy;->getImsOemCallUtil()Lcom/mediatek/ims/plugin/ImsCallOemPlugin;
+@@ -16673,6 +16716,43 @@
+ 
+     invoke-interface {v1, v6}, Lcom/mediatek/ims/ril/ImsCommandsInterface;->hangupAllCall(Landroid/os/Message;)V
+ 
++    goto :cond_6
++
++    :cond_ims_ecc_unsupported
++    invoke-static {v8}, Landroid/telephony/SubscriptionManager;->isValidSubscriptionId(I)Z
++
++    move-result v1
++
++    if-nez v1, :cond_5
++
++    invoke-direct {p0, p2}, Lcom/mediatek/ims/ImsCallSessionProxy;->isCsToImsEmergencyRetry(Landroid/telephony/ims/ImsCallProfile;)Z
++
++    move-result v1
++
++    if-nez v1, :cond_5
++
++    const-string v1, "start() : IMS ECC unsupported, retry over CS"
++
++    const/4 v4, 0x2
++
++    invoke-direct {p0, v1, v4}, Lcom/mediatek/ims/ImsCallSessionProxy;->logWithCallId(Ljava/lang/String;I)V
++
++    sget-object v1, Lcom/mediatek/ims/ImsCallSessionProxy$CallErrorState;->DIAL:Lcom/mediatek/ims/ImsCallSessionProxy$CallErrorState;
++
++    iput-object v1, p0, Lcom/mediatek/ims/ImsCallSessionProxy;->mCallErrorState:Lcom/mediatek/ims/ImsCallSessionProxy$CallErrorState;
++
++    new-instance v1, Landroid/telephony/ims/ImsReasonInfo;
++
++    const/16 v4, 0x92
++
++    const/4 v6, 0x4
++
++    invoke-direct {v1, v4, v6}, Landroid/telephony/ims/ImsReasonInfo;-><init>(II)V
++
++    invoke-direct {p0, v1}, Lcom/mediatek/ims/ImsCallSessionProxy;->notifyCallSessionTerminated(Landroid/telephony/ims/ImsReasonInfo;)V
++
++    return-void
++
+     .line 950
+     :cond_6
+     invoke-direct {p0, p2}, Lcom/mediatek/ims/ImsCallSessionProxy;->isVideoCall(Landroid/telephony/ims/ImsCallProfile;)Z
+@@ -16698,6 +16778,12 @@
+ 
+     .line 958
+     :cond_7
++    invoke-direct {p0, p2}, Lcom/mediatek/ims/ImsCallSessionProxy;->isCsToImsEmergencyRetry(Landroid/telephony/ims/ImsCallProfile;)Z
++
++    move-result v1
++
++    if-nez v1, :cond_8
++
+     iget-object v1, p0, Lcom/mediatek/ims/ImsCallSessionProxy;->mSelfActivateHelper:Lcom/mediatek/ims/plugin/impl/ImsSelfActivatorBase;
+ 
+     if-eqz v1, :cond_8
+-- 
+2.53.0
