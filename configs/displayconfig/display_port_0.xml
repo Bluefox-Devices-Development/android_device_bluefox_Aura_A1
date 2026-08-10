@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<displayConfiguration>
+    <name>Aura_A1 built-in display</name>
+
+    <!--
+         The stock STK6A7X stack reports a persistent Near state and does not
+         produce fresh raw proximity samples. Keep the sensor exposed for
+         diagnostics, but do not let proximity wake locks turn the display off.
+    -->
+    <proxSensor>
+        <type></type>
+        <name></name>
+    </proxSensor>
+</displayConfiguration>

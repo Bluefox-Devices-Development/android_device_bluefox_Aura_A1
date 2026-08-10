@@ -28,6 +28,9 @@ VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 TARGET_SCREEN_WIDTH := 720
 TARGET_SCREEN_HEIGHT := 1600
 
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/displayconfig/display_port_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_port_0.xml
+
 # Device feature declarations
 PRODUCT_PACKAGES += \
     android.hardware.audio.low_latency.prebuilt.xml \
