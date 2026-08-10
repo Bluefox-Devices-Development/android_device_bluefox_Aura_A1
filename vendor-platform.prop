@@ -136,6 +136,9 @@ ro.vendor.mtk_tee_gp_support=1
 ro.vendor.mtk_sec_video_path_support=1
 ro.vendor.mtk_svp_on_mtee_support=2
 
+# Thermal
+vendor.performance.frs.close=1
+
 # Camera and media
 camera.disable_zsl_mode=1
 vendor.debug.pd.force_disable=1
