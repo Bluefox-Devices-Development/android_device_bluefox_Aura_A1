@@ -2,4 +2,5 @@ ro.vendor.bt.connac3 u:object_r:vendor_mtk_bt_connac3_prop:s0
 ro.vendor.mtk_flp_support u:object_r:vendor_mtk_flp_prop:s0
 ro.vendor.usb. u:object_r:vendor_mtk_usb_prop:s0
 persist.vendor.tms.nfc. u:object_r:vendor_tms_nfc_prop:s0
+vendor.debug.pd. u:object_r:vendor_mtk_emcamera_prop:s0
 vendor.tms.nfc. u:object_r:vendor_tms_nfc_prop:s0
