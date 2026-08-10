@@ -223,6 +223,19 @@ blob_fixups: blob_fixups_user_type = {
             b'/vendor/etc/aidl/le_audio/aidl_default_audio_set_scenarios.aura',
         ),
     (
+        'vendor/lib64/hw/android.hardware.audio.effect.aidl-impl-mediatek.so',
+        'vendor/lib64/hw/audio.primary.mediatek.so',
+        'vendor/lib64/hw/hwcomposer.mtk_common.so',
+        'vendor/lib64/lib_power_applist.so',
+        'vendor/lib64/libmtkgpuserv.so',
+        'vendor/lib64/libpowerhal.so',
+        'vendor/lib64/libpqxmlflagparser.so',
+        'vendor/lib64/libpqxmlparser.so',
+        'vendor/lib64/librt_extamp_intf.so',
+        'vendor/lib64/libsilkybrightnesscore.so',
+    ): blob_fixup()
+        .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
+    (
         'vendor/lib64/libmcve.so',
         'vendor/lib64/libtflite_mtk.so',
     ): blob_fixup()
@@ -282,7 +295,8 @@ blob_fixups: blob_fixups_user_type = {
             '',
         ),
     'vendor/lib64/hw/mt6789/vendor.mediatek.hardware.pq_aidl-impl.so': blob_fixup()
-        .remove_needed('android.hardware.sensors-V2-ndk.so'),
+        .remove_needed('android.hardware.sensors-V2-ndk.so')
+        .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
     'vendor/lib64/mt6789/libcam.halsensor.so': blob_fixup()
         .remove_needed('libcam.halsensor.hwintegration_mt6855.so'),
     'vendor/lib64/mt6789/libcam.utils.sensorprovider.so': blob_fixup()

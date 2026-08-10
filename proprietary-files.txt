@@ -852,7 +852,7 @@ vendor/lib64/hw/mt6789/android.hardware.graphics.allocator-V2-mediatek.so;SYMLIN
 vendor/lib64/hw/mt6789/mapper.mediatek.so;SYMLINK=vendor/lib64/hw/mapper.mediatek.so
 vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.ccap@1.0-impl.so;SYMLINK=vendor/lib64/hw/vendor.mediatek.hardware.camera.ccap@1.0-impl.so
 vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.isphal_aidl@1.0-impl.so;SYMLINK=vendor/lib64/hw/vendor.mediatek.hardware.camera.isphal_aidl@1.0-impl.so
-vendor/lib64/hw/mt6789/vendor.mediatek.hardware.pq_aidl-impl.so;SYMLINK=vendor/lib64/hw/vendor.mediatek.hardware.pq_aidl-impl.so|fb5bfac9304eabce1c7cf8455b0130724a8c22cc|67d9668e9719d5480fab38796565c666eecb554e
+vendor/lib64/hw/mt6789/vendor.mediatek.hardware.pq_aidl-impl.so;SYMLINK=vendor/lib64/hw/vendor.mediatek.hardware.pq_aidl-impl.so|fb5bfac9304eabce1c7cf8455b0130724a8c22cc|e3b26391b1d08e26da030109d02df9b106f3ee4a
 vendor/lib64/hw/mt6789/vulkan.mali.so;SYMLINK=vendor/lib64/hw/vulkan.mali.so
 vendor/lib64/hw/mtkflp.default.so
 vendor/lib64/hw/mtkgeofence.default.so
