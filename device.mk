@@ -149,6 +149,18 @@ PRODUCT_PACKAGES += \
     hfp_codec_capabilities_xml \
     libhapticgeneratoraidl
 
+# Frozen AIDL NDK libraries needed by proprietary vendor processes. Install
+# their source-built vendor variants in the vendor linker namespace.
+PRODUCT_PACKAGES += \
+    android.hardware.audio.common-V3-ndk.vendor \
+    android.hardware.audio.effect-V2-ndk.vendor \
+    android.hardware.bluetooth.audio-V4-ndk.vendor \
+    android.hardware.camera.common-V2-ndk.vendor \
+    android.hardware.camera.device-V3-ndk.vendor \
+    android.hardware.camera.provider-V3-ndk.vendor \
+    android.hardware.graphics.common-V6-ndk.vendor \
+    android.media.audio.common.types-V3-ndk.vendor
+
 # A/B and recovery
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth-service.mediatek \
