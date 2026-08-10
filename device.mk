@@ -111,6 +111,7 @@ PRODUCT_PACKAGES += \
     CellBroadcastOverlayAura_A1 \
     DeviceAsWebcamOverlayAura_A1 \
     FrameworkOverlayAura_A1 \
+    LineageSettingsOverlayAura_A1 \
     SystemUIOverlayAura_A1 \
     WifiOverlayAura_A1
 
