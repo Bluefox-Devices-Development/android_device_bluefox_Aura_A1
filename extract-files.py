@@ -303,6 +303,11 @@ blob_fixups: blob_fixups_user_type = {
         .remove_needed('libcam.halsensor.hwintegration_mt6855.so'),
     'vendor/lib64/mt6789/libcam.utils.sensorprovider.so': blob_fixup()
         .remove_needed('android.hardware.sensors-V2-ndk.so'),
+    'vendor/lib64/mt6789/libcamera.custom.pd_buf_mgr.so': blob_fixup()
+        .binary_regex_replace(
+            b'\x19\x47\x80\x52\x18\xd7\x80\x52',
+            b'\x19\x8e\x80\x52\x98\x6b\x80\x52',
+        ),
     'vendor/lib64/mt6789/libmtkcam_grallocutils.so': blob_fixup()
         .remove_needed('android.hardware.graphics.common-V5-ndk.so'),
 }
