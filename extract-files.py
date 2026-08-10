@@ -194,6 +194,18 @@ blob_fixups: blob_fixups_user_type = {
         .apktool_patch('blob-patches/MtkTelephonyAssist'),
     'system_ext/lib64/libimsma.so': blob_fixup()
         .replace_needed('libsink.so', 'libsink-mtk.so'),
+    'vendor/etc/audio_effects_config.xml': blob_fixup()
+        .regex_replace(
+            r'(?m)^[ \t]*<library name="erasersw" path="liberasersw\.so"/>'
+            r'[ \t]*\r?\n',
+            '',
+        )
+        .regex_replace(
+            r'(?m)^[ \t]*<effect name="eraser" library="erasersw" '
+            r'uuid="fa81ab46-588b-11ed-9b6a-0242ac120002"/>'
+            r'[ \t]*\r?\n',
+            '',
+        ),
     'vendor/bin/mnld': blob_fixup()
         .remove_needed('android.hardware.sensors-V2-ndk.so'),
     'vendor/lib64/android.hardware.audio.core-impl-mediatek.so': blob_fixup()
