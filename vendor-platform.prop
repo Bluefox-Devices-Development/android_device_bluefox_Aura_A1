@@ -138,7 +138,6 @@ ro.vendor.mtk_svp_on_mtee_support=2
 
 # Camera and media
 camera.disable_zsl_mode=1
-vendor.debug.pd.force_disable=1
 vendor.camera.mdp.dre.enable=1
 vendor.camera.mdp.cz.enable=1
 
