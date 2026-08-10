@@ -12,8 +12,8 @@
     <bool name="config_supportsMicToggle">true</bool>
     <bool name="config_suspendWhenScreenOffDueToProximity">true</bool>
 
-    <integer name="config_defaultPeakRefreshRate">61</integer>
-    <integer name="config_defaultRefreshRate">61</integer>
+    <integer name="config_defaultPeakRefreshRate">90</integer>
+    <integer name="config_defaultRefreshRate">60</integer>
     <integer name="config_num_physical_slots">2</integer>
     <integer name="config_screenBrightnessDoze">5</integer>
 
