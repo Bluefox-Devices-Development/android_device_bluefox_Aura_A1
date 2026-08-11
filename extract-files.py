@@ -168,7 +168,7 @@ def write_page_size_4k_exceptions(ctx, packages_ctx):
     package_names = []
 
     for file_path, is_binary in page_size_4k_exceptions:
-        file = main_proprietary_file.file_list.get_file(file_path)
+        file = main_proprietary_file.file_list.all_files.get_file(file_path)
         base_dir = 'vendor/bin' if is_binary else 'vendor/lib64'
         prefix_len = len(f'{base_dir}/')
         builder = FileBpBuilder(
