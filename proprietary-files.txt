@@ -1,9 +1,9 @@
 # Proprietary files from BLUEFOX/Aura_A1/Aura_A1:16/BP2A.250605.031.A3/20260610:user/release-keys
 
 # Stock proprietary bootstrap. Generated partition metadata, source-owned
-# fstab/VINTF declarations, Google connectivity overlays, optional DRM/CAS
-# APEXes, and non-redistributable biometric face assets are intentionally
-# excluded. Valid in-partition aliases are represented with SYMLINK entries.
+# fstab/VINTF declarations, Google connectivity overlays, the stock CAS APEX,
+# and non-redistributable biometric face assets are intentionally excluded.
+# Valid in-partition aliases are represented with SYMLINK entries.
 
 # IMS framework and video telephony
 system_ext/bin/vtservice
@@ -29,6 +29,18 @@ system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 system_ext/priv-app/ImsService/ImsService.apk|0ffa4922c4d18a4da8301cc25c256792d3f09526|4bef424fae9dcf9501853121302b7788aebde58b
 system_ext/priv-app/MtkGbaService/MtkGbaService.apk
 system_ext/priv-app/MtkTelephonyAssist/MtkTelephonyAssist.apk|44670cd483046ebb2c66ce0f9fcf17a52e5faf7b|3c5c0cfaea9b41a56d6c293d8fb764b7f122a465
+
+# Fingerprint - BLUEFOX_J583_A8_Aura_A1_CN_V1.0.0_20260805
+vendor/bin/hw/android.hardware.biometrics.fingerprint-service|23a471b71abd9f596b3ba5922f3e08ecab71138f
+vendor/etc/init/fingerprint-default1.rc|e2656520bf666654a3b69351ebe0c23c19f5f32e
+vendor/etc/init/init.focaltech.rc|cf2dc42ef629efb1b45e3cdc5eba739853e13143
+vendor/etc/vintf/manifest/fingerprint-default.xml:vendor/etc/vintf/manifest/fingerprint-default.aura.xml|d127f61a5ccda2a2e0dd9523300b267a5d5b73f2
+vendor/lib64/hw/libfingerprint.focaltech.default.so|5e70754211901fd1a1588b01a92010109c0ea93b
+vendor/thh/ta/04190000000000000000000000000000.ta|b1b28bd4c174b3bc6913d16c24c15540a23a52db
+
+# DRM - BLUEFOX_J583_A8_Aura_A1_EN_8_128_V1.0.0_20260610
+vendor/apex/com.google.android.widevine.nonupdatable.apex|2fcc8fc2f2baa86aa0010f667a9fb19300acc465
+vendor/apex/com.mediatek.oemcrypto.apex|19d0d3f110e898b4536a6ab28743ee4e58b5311d
 
 # Vendor executables
 vendor/bin/atcid
@@ -88,7 +100,6 @@ vendor/bin/xcap
 
 # Vendor HAL services
 vendor/bin/hw/android.hardware.audio.service-aidl.mediatek
-vendor/bin/hw/android.hardware.biometrics.fingerprint-service
 vendor/bin/hw/android.hardware.drm-service.clearkey:vendor/bin/hw/android.hardware.drm-service.clearkey-stock
 vendor/bin/hw/android.hardware.gatekeeper-service.beanpod
 vendor/bin/hw/android.hardware.gnss-service.mediatek
@@ -435,7 +446,6 @@ vendor/etc/init/bootperf.rc
 vendor/etc/init/camerahalserver.rc
 vendor/etc/init/dmc_core.rc
 vendor/etc/init/eara-io-service.rc
-vendor/etc/init/fingerprint-default1.rc
 vendor/etc/init/fpsgo.rc
 vendor/etc/init/fuelgauged_init.rc
 vendor/etc/init/fuelgauged_nvram_init.rc
@@ -461,7 +471,6 @@ vendor/etc/init/init.bt_drv.rc
 vendor/etc/init/init.cccimdinit.rc
 vendor/etc/init/init.cccirpcd.rc
 vendor/etc/init/init.connfem.rc
-vendor/etc/init/init.focaltech.rc
 vendor/etc/init/init.fpsgo.rc
 vendor/etc/init/init.frs.rc
 vendor/etc/init/init.gps_drv.rc
@@ -743,7 +752,6 @@ vendor/etc/vintf/manifest/android.hardware.wifi-service.xml:vendor/etc/vintf/man
 vendor/etc/vintf/manifest/android.hardware.wifi.hostapd.xml:vendor/etc/vintf/manifest/android.hardware.wifi.hostapd.aura.xml
 vendor/etc/vintf/manifest/android.hardware.wifi.supplicant.xml:vendor/etc/vintf/manifest/android.hardware.wifi.supplicant.aura.xml
 vendor/etc/vintf/manifest/bluetooth_audio.xml:vendor/etc/vintf/manifest/bluetooth_audio.aura.xml
-vendor/etc/vintf/manifest/fingerprint-default.xml:vendor/etc/vintf/manifest/fingerprint-default.aura.xml
 vendor/etc/vintf/manifest/gnss-default.xml:vendor/etc/vintf/manifest/gnss-default.aura.xml
 vendor/etc/vintf/manifest/gnss-mtk.xml
 vendor/etc/vintf/manifest/lights-mtk-default.xml
@@ -846,7 +854,6 @@ vendor/lib64/hw/gps.default.so
 vendor/lib64/hw/hwcomposer.mtk_common.so
 vendor/lib64/hw/id_attestation.beanpod.so
 vendor/lib64/hw/kmsetkey.beanpod.so
-vendor/lib64/hw/libfingerprint.focaltech.default.so
 vendor/lib64/hw/mt6789/android.hardware.camera.provider@2.6-impl-mediatek.so;SYMLINK=vendor/lib64/hw/android.hardware.camera.provider@2.6-impl-mediatek.so
 vendor/lib64/hw/mt6789/android.hardware.graphics.allocator-V2-mediatek.so;SYMLINK=vendor/lib64/hw/android.hardware.graphics.allocator-V2-mediatek.so
 vendor/lib64/hw/mt6789/mapper.mediatek.so;SYMLINK=vendor/lib64/hw/mapper.mediatek.so
@@ -1636,7 +1643,6 @@ vendor/lib64/vpp_hdrmeta_handler_plugin.so
 # Microtrust trusted applications
 vendor/thh/ta/0102030405060708090a0b0c0d0e0f10.ta
 vendor/thh/ta/020f0000000000000000000000000000.ta
-vendor/thh/ta/04190000000000000000000000000000.ta
 vendor/thh/ta/08030000000000000000000000000000.ta
 vendor/thh/ta/08110000000000000000000000000000.ta
 vendor/thh/ta/3bb8ce3f62e044b2926f3f10339ca6d7.ta

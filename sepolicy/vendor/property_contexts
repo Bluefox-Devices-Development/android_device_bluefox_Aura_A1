@@ -1,3 +1,4 @@
+persist.vendor.fingerprint.chip u:object_r:vendor_focaltech_fingerprint_prop:s0 exact string
 ro.vendor.bt.connac3 u:object_r:vendor_mtk_bt_connac3_prop:s0
 ro.vendor.mtk_flp_support u:object_r:vendor_mtk_flp_prop:s0
 ro.vendor.usb. u:object_r:vendor_mtk_usb_prop:s0

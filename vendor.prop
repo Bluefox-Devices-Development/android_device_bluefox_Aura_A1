@@ -14,6 +14,7 @@ persist.adb.nonblocking_ffs=0
 
 # DRM
 drm.service.enabled=true
+ro.vendor.mtk_widevine_drm_l1_support=1
 
 # Device hardware
 ro.hardware.consumerir=common

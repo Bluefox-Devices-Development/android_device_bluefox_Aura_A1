@@ -8,3 +8,5 @@ allow hal_fingerprint_default ff_device:chr_file rw_file_perms;
 allow hal_fingerprint_default ff_service:service_manager { add find };
 allow hal_fingerprint_default self:binder call;
 allow hal_fingerprint_default self:netlink_kobject_uevent_socket { bind create read setopt };
+
+set_prop(hal_fingerprint_default, vendor_focaltech_fingerprint_prop)
