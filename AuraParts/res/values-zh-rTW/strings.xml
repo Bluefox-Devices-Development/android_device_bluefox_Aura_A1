@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="smart_key_title">智靈鍵</string>
+    <string name="smart_key_summary">自訂按一下、連按兩下與長按動作</string>
+
+    <string name="gesture_category_title">動作</string>
+    <string name="gesture_single">按一下</string>
+    <string name="gesture_double">連按兩下</string>
+    <string name="gesture_long">長按</string>
+
+    <string name="information_category_title">關於智靈鍵</string>
+    <string name="double_press_delay_title">按鍵辨識時間</string>
+    <string name="double_press_delay_summary">為辨識連按兩下，按一下最多會延遲 400 毫秒。</string>
+    <string name="screen_off_title">螢幕關閉時的動作</string>
+    <string name="screen_off_summary">螢幕關閉時只能使用手電筒、緊急 SOS 及靜音／響鈴動作。</string>
+
+    <string name="quick_actions_category_title">快捷操作</string>
+    <string name="applications_category_title">應用程式</string>
+    <string name="action_none">無動作</string>
+    <string name="action_recorder">開啟錄音程式</string>
+    <string name="action_flashlight">切換手電筒</string>
+    <string name="action_screenshot">擷取螢幕畫面</string>
+    <string name="action_camera">開啟相機</string>
+    <string name="action_emergency">緊急 SOS</string>
+    <string name="action_mute_ring">切換靜音與響鈴</string>
+    <string name="action_open_app">開啟應用程式</string>
+    <string name="screen_off_available">螢幕關閉時可用</string>
+    <string name="screen_on_only">螢幕必須開啟</string>
+    <string name="emergency_setup_required">須先完成設定並啟用緊急 SOS</string>
+    <string name="app_not_available">應用程式無法使用</string>
+
+    <string name="choose_application_title">選擇應用程式</string>
+    <string name="app_search_hint">搜尋應用程式</string>
+    <string name="no_apps_found">找不到應用程式</string>
+
+    <string name="emergency_dialog_title">設定緊急 SOS</string>
+    <string name="emergency_dialog_message">必須先啟用緊急 SOS，才能將它指派給智靈鍵。</string>
+    <string name="emergency_dialog_settings">緊急 SOS 設定</string>
+    <string name="cancel">取消</string>
+</resources>

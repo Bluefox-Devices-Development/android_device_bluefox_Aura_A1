@@ -109,11 +109,17 @@ $(call soong_config_set_bool,mediatek_gadget,use_custom_usb_gadget_rc,true)
 
 $(call inherit-product, hardware/mediatek/overlay/mssi.mk)
 
+# Device settings
+PRODUCT_PACKAGES += \
+    AuraParts
+
 # Device overlays
 PRODUCT_PACKAGES += \
     CellBroadcastOverlayAura_A1 \
     DeviceAsWebcamOverlayAura_A1 \
     FrameworkOverlayAura_A1 \
+    LineagePartsOverlayAura_A1 \
+    LineageSDKOverlayAura_A1 \
     LineageSettingsOverlayAura_A1 \
     SystemUIOverlayAura_A1 \
     WifiOverlayAura_A1

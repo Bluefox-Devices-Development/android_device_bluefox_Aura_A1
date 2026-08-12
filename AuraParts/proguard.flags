@@ -1,0 +1,4 @@
+# The class is instantiated by PhoneWindowManager through PathClassLoader.
+-keep public class org.lineageos.settings.device.smartkey.SmartKeyHandler {
+    public <init>(android.content.Context);
+}

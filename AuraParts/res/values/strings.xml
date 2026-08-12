@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="smart_key_title">Smart key</string>
+    <string name="smart_key_summary">Customize single press, double press, and long press actions</string>
+
+    <string name="gesture_category_title">Actions</string>
+    <string name="gesture_single">Press once</string>
+    <string name="gesture_double">Press twice</string>
+    <string name="gesture_long">Press and hold</string>
+
+    <string name="information_category_title">About the smart key</string>
+    <string name="double_press_delay_title">Press timing</string>
+    <string name="double_press_delay_summary">A single press waits up to 400 ms to check for a second press.</string>
+    <string name="screen_off_title">Screen-off actions</string>
+    <string name="screen_off_summary">Only flashlight, Emergency SOS, and mute/ring actions are available while the screen is off.</string>
+
+    <string name="quick_actions_category_title">Quick actions</string>
+    <string name="applications_category_title">Applications</string>
+    <string name="action_none">No action</string>
+    <string name="action_recorder">Open recorder</string>
+    <string name="action_flashlight">Toggle flashlight</string>
+    <string name="action_screenshot">Take screenshot</string>
+    <string name="action_camera">Open camera</string>
+    <string name="action_emergency">Emergency SOS</string>
+    <string name="action_mute_ring">Toggle mute and ring</string>
+    <string name="action_open_app">Open application</string>
+    <string name="screen_off_available">Available while the screen is off</string>
+    <string name="screen_on_only">Screen must be on</string>
+    <string name="emergency_setup_required">Set up and enable Emergency SOS first</string>
+    <string name="app_not_available">Application not available</string>
+
+    <string name="choose_application_title">Choose application</string>
+    <string name="app_search_hint">Search applications</string>
+    <string name="no_apps_found">No applications found</string>
+
+    <string name="emergency_dialog_title">Set up Emergency SOS</string>
+    <string name="emergency_dialog_message">Emergency SOS must be enabled before assigning it to the smart key.</string>
+    <string name="emergency_dialog_settings">Emergency SOS settings</string>
+    <string name="cancel">Cancel</string>
+</resources>
