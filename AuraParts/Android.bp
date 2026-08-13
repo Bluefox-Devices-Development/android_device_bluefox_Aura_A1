@@ -29,12 +29,15 @@ android_app {
     static_libs: [
         "SpaLib",
         "androidx.activity_activity-compose",
+        "androidx.compose.animation_animation",
+        "androidx.compose.animation_animation-core",
         "androidx.compose.foundation_foundation",
         "androidx.compose.foundation_foundation-layout",
         "androidx.compose.material3_material3",
         "androidx.compose.runtime_runtime",
         "androidx.compose.runtime_runtime-saveable",
         "androidx.compose.ui_ui",
+        "androidx.navigation_navigation-compose",
         "kotlinx_coroutines",
     ],
 }
