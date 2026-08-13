@@ -1,6 +1,5 @@
-# Pre-arm the USB gadget before the boot event on debuggable builds. adbd
-# remains delayed until the default APEX namespace is available.
-on post-fs && property:ro.debuggable=1
+# Configure ADB after init has exported the ART classpaths, but before boot.
+on post-fs-data && property:ro.debuggable=1
     setprop sys.usb.controller musb-hdrc
     setprop vendor.usb.controller musb-hdrc
     setprop sys.usb.ffs.aio_compat 0
