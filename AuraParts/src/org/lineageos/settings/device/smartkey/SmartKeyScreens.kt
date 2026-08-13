@@ -13,8 +13,10 @@ import android.content.pm.ResolveInfo
 import android.graphics.drawable.Drawable
 import android.os.UserHandle
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -40,17 +42,22 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.android.settingslib.spa.framework.compose.rememberDrawablePainter
+import com.android.settingslib.spa.framework.theme.SettingsShape
+import com.android.settingslib.spa.framework.theme.SettingsSpace
+import com.android.settingslib.spa.framework.theme.isSpaExpressiveEnabled
 import com.android.settingslib.spa.widget.preference.Preference
 import com.android.settingslib.spa.widget.preference.PreferenceModel
 import com.android.settingslib.spa.widget.scaffold.SearchScaffold
 import com.android.settingslib.spa.widget.scaffold.SettingsScaffold
 import com.android.settingslib.spa.widget.ui.Category
+import com.android.settingslib.spa.widget.ui.CategoryTitle
 import com.android.settingslib.spa.widget.ui.LazyCategory
 import java.util.Locale
 import kotlinx.coroutines.Dispatchers
@@ -203,14 +210,14 @@ internal fun SmartKeyActionPickerScreen(
         modifier =
             Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(paddingValues),
     ) {
-      Category(modifier = Modifier.selectableGroup()) {
+      SmartKeyRadioCategory(modifier = Modifier.selectableGroup()) {
         SmartKeyRadioPreference(
             title = stringResource(R.string.action_none),
             selected = selectedAction == SmartKeyContract.ACTION_NONE,
             onClick = { selectAction(SmartKeyContract.ACTION_NONE) },
         )
       }
-      Category(
+      SmartKeyRadioCategory(
           title = stringResource(R.string.quick_actions_category_title),
           modifier = Modifier.selectableGroup(),
       ) {
@@ -242,7 +249,7 @@ internal fun SmartKeyActionPickerScreen(
             },
         )
       }
-      Category(
+      SmartKeyRadioCategory(
           title = stringResource(R.string.applications_category_title),
           modifier = Modifier.selectableGroup(),
       ) {
@@ -324,6 +331,45 @@ internal fun SmartKeyAppPickerScreen(
             )
           }
     }
+  }
+}
+
+@Composable
+private fun SmartKeyRadioCategory(
+    title: String? = null,
+    modifier: Modifier = Modifier,
+    content: @Composable ColumnScope.() -> Unit,
+) {
+  val expressive = isSpaExpressiveEnabled
+  Column(
+      modifier =
+          if (expressive) {
+            Modifier.padding(
+                horizontal = SettingsSpace.small1,
+                vertical = SettingsSpace.extraSmall4,
+            )
+          } else {
+            Modifier
+          },
+  ) {
+    if (title != null) {
+      CategoryTitle(title = title)
+    }
+    Column(
+        modifier =
+            if (expressive) {
+              modifier.fillMaxWidth().clip(SettingsShape.CornerLarge2)
+            } else {
+              modifier
+            },
+        verticalArrangement =
+            if (expressive) {
+              Arrangement.spacedBy(SettingsSpace.extraSmall1)
+            } else {
+              Arrangement.Top
+            },
+        content = content,
+    )
   }
 }
 
