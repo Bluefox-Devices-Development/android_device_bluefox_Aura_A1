@@ -6,8 +6,6 @@
 android_app {
     name: "AuraParts",
 
-    defaults: ["SpaPrivilegedLib-defaults"],
-
     srcs: [
         "src/**/*.java",
         "src/**/*.kt",
@@ -21,12 +19,15 @@ android_app {
     privileged: true,
     privapp_allowlist: "privapp-permissions-org.lineageos.settings.device.xml",
 
+    kotlincflags: ["-Xjvm-default=all"],
+
     optimize: {
         optimize: true,
         proguard_flags_files: ["proguard.flags"],
     },
 
     static_libs: [
+        "SpaLib",
         "androidx.activity_activity-compose",
         "androidx.compose.foundation_foundation",
         "androidx.compose.foundation_foundation-layout",
