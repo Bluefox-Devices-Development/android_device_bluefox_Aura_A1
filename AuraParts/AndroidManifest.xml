@@ -19,7 +19,7 @@
         android:allowBackup="false"
         android:label="@string/smart_key_title"
         android:supportsRtl="true"
-        android:theme="@style/Theme.SubSettingsBase">
+        android:theme="@style/Theme.SpaLib">
 
         <activity
             android:name=".smartkey.SmartKeyActivity"

@@ -6,9 +6,12 @@
 android_app {
     name: "AuraParts",
 
-    defaults: ["SettingsLibDefaults"],
+    defaults: ["SpaPrivilegedLib-defaults"],
 
-    srcs: ["src/**/*.java"],
+    srcs: [
+        "src/**/*.java",
+        "src/**/*.kt",
+    ],
     resource_dirs: ["res"],
     manifest: "AndroidManifest.xml",
 
@@ -24,9 +27,13 @@ android_app {
     },
 
     static_libs: [
-        "androidx.appcompat_appcompat",
-        "androidx.preference_preference",
-        "SettingsLibCollapsingToolbarBaseActivity",
-        "SettingsLibSelectorWithWidgetPreference",
+        "androidx.activity_activity-compose",
+        "androidx.compose.foundation_foundation",
+        "androidx.compose.foundation_foundation-layout",
+        "androidx.compose.material3_material3",
+        "androidx.compose.runtime_runtime",
+        "androidx.compose.runtime_runtime-saveable",
+        "androidx.compose.ui_ui",
+        "kotlinx_coroutines",
     ],
 }
