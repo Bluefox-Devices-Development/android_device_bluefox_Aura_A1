@@ -130,6 +130,7 @@ PRODUCT_PACKAGES += \
 
 # Device overlays
 PRODUCT_PACKAGES += \
+    CarrierConfigOverlayAura_A1 \
     CellBroadcastOverlayAura_A1 \
     DeviceAsWebcamOverlayAura_A1 \
     FrameworkOverlayAura_A1 \
