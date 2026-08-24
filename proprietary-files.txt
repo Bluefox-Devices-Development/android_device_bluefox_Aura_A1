@@ -97,7 +97,6 @@ vendor/bin/volte_rcs_ua
 vendor/bin/volte_stack
 vendor/bin/volte_ua
 vendor/bin/wfca
-vendor/bin/wlan_assistant
 vendor/bin/wmt_launcher
 vendor/bin/wmt_loader
 vendor/bin/xcap
@@ -486,7 +485,6 @@ vendor/etc/init/vendor.microtrust.hardware.thh-service.rc
 vendor/etc/init/vendor.microtrust.hardware.widevine@1.0-service.beanpod.rc
 vendor/etc/init/vibrator-mtk-default.rc
 vendor/etc/init/volte_clientapi_ua.rc
-vendor/etc/init/wlan_assistant.rc
 
 # IPsec configuration
 vendor/etc/ipsec/ipsec.conf
