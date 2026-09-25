@@ -197,6 +197,11 @@ blob_fixups: blob_fixups_user_type = {
             r'[ \t]*\r?\n',
             '',
         ),
+    (
+        'vendor/lib64/libcodec2_mtk_vdec.so',
+        'vendor/lib64/libcodec2_mtk_venc.so',
+    ): blob_fixup()
+        .replace_needed('libformatter.so', 'libformatter_mtk.so'),
     'vendor/bin/mnld': blob_fixup()
         .remove_needed('android.hardware.sensors-V2-ndk.so')
         .replace_needed('libmnl.so', 'libmnl_mtk.so'),
