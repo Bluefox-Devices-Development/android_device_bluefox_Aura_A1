@@ -198,7 +198,8 @@ blob_fixups: blob_fixups_user_type = {
             '',
         ),
     'vendor/bin/mnld': blob_fixup()
-        .remove_needed('android.hardware.sensors-V2-ndk.so'),
+        .remove_needed('android.hardware.sensors-V2-ndk.so')
+        .replace_needed('libmnl.so', 'libmnl_mtk.so'),
     'vendor/lib64/android.hardware.audio.core-impl-mediatek.so': blob_fixup()
         .add_needed('libaudioutils_shim.so'),
     (
