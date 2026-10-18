@@ -335,6 +335,18 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace(
             r'/vendor/bin/hw/wpa_supplicant(?=\s)',
             '/vendor/bin/hw/wpa_supplicant-stock',
+        )
+        .regex_replace(
+            r'(?m)^[ \t]*#   we will start as root.*\n'
+            r'[ \t]*#   after setting up.*\n'
+            r'[ \t]*#   user wifi\n'
+            r'[ \t]*#   group wifi inet keystore\n',
+            '',
+        )
+        .regex_replace(
+            r'(?m)^([ \t]+)user root$',
+            r'\1user wifi\n\1group wifi net_raw net_admin\n'
+            r'\1capabilities NET_RAW NET_ADMIN',
         ),
     'vendor/etc/init/hw/init.mt6789.rc': blob_fixup()
         .regex_replace(
