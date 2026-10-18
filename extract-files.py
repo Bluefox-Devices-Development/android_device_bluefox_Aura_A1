@@ -301,6 +301,8 @@ lib_fixups: lib_fixups_user_type = {
         'android.hardware.graphics.common-V6-ndk',
         'android.media.audio.common.types-V3-ndk',
     ): lib_fixup_vendorcompat,
+    # Upstream's development V2 lacks the stock perfCusLockHintWithData API.
+    'vendor.mediatek.hardware.mtkpower-V2-ndk': lib_fixup_vendorcompat,
 }
 
 module = ExtractUtilsModule(
