@@ -188,6 +188,14 @@ blob_fixups: blob_fixups_user_type = {
             r'uuid="fa81ab46-588b-11ed-9b6a-0242ac120002"/>'
             r'[ \t]*\r?\n',
             '',
+        )
+        # AudioFX uses a nonzero session; auxiliary preset reverb is invalid
+        # there and is otherwise selected ahead of the insert implementation.
+        .regex_replace(
+            r'(?m)^[ \t]*<effect name="reverb_pre_aux" library="reverb" '
+            r'uuid="f29a1400-a3bb-11df-8ddc-0002a5d5c51b"/>'
+            r'[ \t]*\r?\n',
+            '',
         ),
     'vendor/bin/mnld': blob_fixup()
         .remove_needed('android.hardware.sensors-V2-ndk.so'),
