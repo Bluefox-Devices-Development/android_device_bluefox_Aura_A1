@@ -2,3 +2,6 @@ allow vendor_init nfc_device:chr_file getattr;
 
 set_prop(vendor_init, vendor_mtk_bt_connac3_prop)
 set_prop(vendor_init, vendor_mtk_emcamera_prop)
+
+# Apply vendor.performance.frs.close from the board's vendor properties.
+set_prop(vendor_init, vendor_mtk_frs_prop)
