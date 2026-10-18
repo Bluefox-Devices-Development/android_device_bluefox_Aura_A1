@@ -108,7 +108,6 @@ vendor/bin/hw/android.hardware.gatekeeper-service.beanpod
 vendor/bin/hw/android.hardware.gnss-service.mediatek
 vendor/bin/hw/android.hardware.graphics.composer@3.4-service
 vendor/bin/hw/android.hardware.identity-service.beanpod
-vendor/bin/hw/android.hardware.lights-service.mediatek
 vendor/bin/hw/android.hardware.media.c2-mediatek-64b
 vendor/bin/hw/android.hardware.nfc-service-tms
 vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek
@@ -450,7 +449,6 @@ vendor/etc/init/init.wmt_drv.rc
 vendor/etc/init/init.wod.rc
 vendor/etc/init/init.xcap.rc
 vendor/etc/init/ipsec_mon.rc
-vendor/etc/init/lights-mtk-default.rc
 vendor/etc/init/microtrust.bp_kmsetkey_ca.rc
 vendor/etc/init/microtrust.init_thh.rc
 vendor/etc/init/microtrust.rc
@@ -712,7 +710,6 @@ vendor/etc/vintf/manifest/android.hardware.wifi.supplicant.xml:vendor/etc/vintf/
 vendor/etc/vintf/manifest/bluetooth_audio.xml:vendor/etc/vintf/manifest/bluetooth_audio.aura.xml
 vendor/etc/vintf/manifest/gnss-default.xml:vendor/etc/vintf/manifest/gnss-default.aura.xml
 vendor/etc/vintf/manifest/gnss-mtk.xml
-vendor/etc/vintf/manifest/lights-mtk-default.xml
 vendor/etc/vintf/manifest/manifest_allocator.xml
 vendor/etc/vintf/manifest/manifest_cameraprovider.xml
 vendor/etc/vintf/manifest/manifest_hwcomposer.xml
@@ -1530,7 +1527,6 @@ vendor/lib64/vendor.mediatek.hardware.mmagent@1.0.so
 vendor/lib64/vendor.mediatek.hardware.mmlpq-V3-ndk.so
 vendor/lib64/vendor.mediatek.hardware.mmlpq-V5-ndk.so
 vendor/lib64/vendor.mediatek.hardware.mms-V1-ndk.so
-vendor/lib64/vendor.mediatek.hardware.mtklight-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.mtkpower-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.mtkpower-V2-ndk.so
 vendor/lib64/vendor.mediatek.hardware.mtkpower-V3-ndk.so

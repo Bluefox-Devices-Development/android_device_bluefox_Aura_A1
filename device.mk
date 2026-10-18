@@ -213,6 +213,9 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/etc/fstab.mt6789:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt6789 \
     $(DEVICE_PATH)/rootdir/etc/fstab.mt6789:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.mt6789
 
+# Lights: the panel exposes a single 0-255 lcd-backlight LED class device.
+PRODUCT_PACKAGES += android.hardware.light-service.lineage
+
 # Wi-Fi
 PRODUCT_PACKAGES += wlan_assistant
 
