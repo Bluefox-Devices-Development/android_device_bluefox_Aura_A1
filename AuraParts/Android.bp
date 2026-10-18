@@ -39,5 +39,6 @@ android_app {
         "androidx.compose.ui_ui",
         "androidx.navigation_navigation-compose",
         "kotlinx_coroutines",
+        "lottie",
     ],
 }
