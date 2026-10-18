@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-from extract_utils.bp_builder import BpBuilder, FileBpBuilder
+from extract_utils.bp_builder import BpBuilder
 from extract_utils.bp_encoder import BpJSONEncoder
 from extract_utils.fixups_blob import blob_fixup, blob_fixups_user_type
 from extract_utils.fixups_lib import (
@@ -13,23 +13,12 @@ from extract_utils.fixups_lib import (
     lib_fixups_user_type,
 )
 from extract_utils.main import ExtractUtils, ExtractUtilsModule
-from extract_utils.makefiles import write_elfs_package, write_packages_inclusion
 
 namespace_imports = [
     'device/bluefox/Aura_A1',
     'hardware/mediatek',
     'hardware/mediatek/libmtkperf_client',
 ]
-
-# These stock-only binaries are the complete 4 KiB PT_LOAD exception set.
-# Keep normal ELF dependency checks enabled and waive only the 16 KiB alignment
-# gate that cannot be repaired without relinking the proprietary objects.
-page_size_4k_exceptions = (
-    ('vendor/lib64/libcamplugin.pi.dyn_prvportrait.so', False),
-    ('vendor/lib64/libcamplugin.pi.dyn_stillportrait.so', False),
-    ('vendor/lib64/libpi_feature_check.so', False),
-    ('vendor/lib64/libpi_feature_util.so', False),
-)
 
 noninstallable_compat_libraries = (
     (
@@ -161,32 +150,6 @@ def write_noninstallable_compat_libraries(ctx, _):
             .specific()
             .write(ctx.bp_out)
         )
-
-
-def write_page_size_4k_exceptions(ctx, packages_ctx):
-    encoder = BpJSONEncoder(legacy=ctx.legacy)
-    package_names = []
-
-    for file_path, is_binary in page_size_4k_exceptions:
-        file = main_proprietary_file.file_list.all_files.get_file(file_path)
-        base_dir = 'vendor/bin' if is_binary else 'vendor/lib64'
-        prefix_len = len(f'{base_dir}/')
-        builder = FileBpBuilder(
-            file,
-            prefix_len,
-            packages_ctx.vendor_prop_rel_sub_path,
-            encoder,
-        ).set_owner(packages_ctx.vendor)
-        package_name = write_elfs_package(
-            [file],
-            builder,
-            packages_ctx,
-            is_bin=is_binary,
-        )
-        builder.set('ignore_max_page_size', True).write(ctx.bp_out)
-        package_names.append(package_name)
-
-    write_packages_inclusion(package_names, ctx.product_mk_out)
 
 
 def fix_ov64b40_pdaf_geometry(ctx, file, file_path, **_):
@@ -358,9 +321,6 @@ main_proprietary_file = next(
 )
 main_proprietary_file.add_post_makefile_generation_fn(
     write_noninstallable_compat_libraries
-)
-main_proprietary_file.add_post_makefile_generation_fn(
-    write_page_size_4k_exceptions
 )
 
 if __name__ == '__main__':
