@@ -26,7 +26,7 @@ system_ext/lib64/libvcodec_capenc.so
 system_ext/lib64/libvt_avsync.so
 system_ext/lib64/vendor.mediatek.hardware.videotelephony-V1-ndk.so
 system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
-system_ext/priv-app/ImsService/ImsService.apk|0ffa4922c4d18a4da8301cc25c256792d3f09526|4bef424fae9dcf9501853121302b7788aebde58b
+system_ext/priv-app/ImsService/ImsService.apk|93a477df88ac48532f338909aaba5d8244d910f0|148f5cecf17287ac3ea72239d35e330c9e4217fc
 system_ext/priv-app/MtkGbaService/MtkGbaService.apk
 system_ext/priv-app/MtkTelephonyAssist/MtkTelephonyAssist.apk|44670cd483046ebb2c66ce0f9fcf17a52e5faf7b|3c5c0cfaea9b41a56d6c293d8fb764b7f122a465
 

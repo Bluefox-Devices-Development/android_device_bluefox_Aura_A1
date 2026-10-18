@@ -173,7 +173,7 @@ index 68fa1a9..8498a8f 100644
 -    .locals 3
 +    .locals 4
  
-     .line 578
+     .line 595
      new-instance v0, Landroid/content/IntentFilter;
 @@ -3342,7 +3342,9 @@
  
@@ -184,7 +184,7 @@ index 68fa1a9..8498a8f 100644
 +
 +    invoke-virtual {v1, v2, v0, v3}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;I)Landroid/content/Intent;
  
-     .line 590
+     .line 607
      return-void
 diff --git a/smali/com/mediatek/wfo/impl/WifiPdnHandler.smali b/smali/com/mediatek/wfo/impl/WifiPdnHandler.smali
 index 26be99d..2df0e81 100644
