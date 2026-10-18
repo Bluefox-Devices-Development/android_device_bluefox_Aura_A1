@@ -1,3 +1,11 @@
 # Allow the MTK power HAL to use the AIDL netdagent service and observe boot.
 hal_client_domain(mtk_hal_power, mtk_hal_netdagent)
 get_prop(mtk_hal_power, boot_status_prop)
+
+# Preserve the stock BoostFwk writers in the device policy.
+set_prop(mtk_hal_power, vendor_mtk_boostfwk_checkpoint_prop)
+set_prop(mtk_hal_power, vendor_mtk_boostfwk_scroll_duration_h_prop)
+set_prop(mtk_hal_power, vendor_mtk_boostfwk_scroll_duration_v_prop)
+set_prop(mtk_hal_power, vendor_mtk_boostfwk_sbb_touch_duration_prop)
+set_prop(mtk_hal_power, vendor_mtk_boostfwk_scroll_floor_prop)
+set_prop(mtk_hal_power, vendor_mtk_boostfwk_frame_decision_prop)
