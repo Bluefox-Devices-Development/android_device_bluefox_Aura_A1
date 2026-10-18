@@ -799,7 +799,6 @@ vendor/lib64/hw/audio.bluetooth.default.so
 vendor/lib64/hw/audio.primary.mediatek.so;SYMLINK=vendor/lib64/hw/audio.primary.mt6789.so
 vendor/lib64/hw/audio.r_submix.default.so
 vendor/lib64/hw/audio.r_submix.mediatek.so;SYMLINK=vendor/lib64/hw/audio.r_submix.mt6789.so
-vendor/lib64/hw/audio.usb.default.so
 vendor/lib64/hw/audio_policy.stub.so
 vendor/lib64/hw/consumerir.common.so
 vendor/lib64/hw/gps.default.so

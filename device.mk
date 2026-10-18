@@ -181,6 +181,9 @@ PRODUCT_PACKAGES += \
     libloudnessenhanceraidl \
     libdownmixaidl
 
+# Generic USB audio module used by the proprietary AIDL audio stack.
+PRODUCT_PACKAGES += audio.usb.default
+
 # Frozen AIDL NDK libraries needed by proprietary vendor processes. Install
 # their source-built vendor variants in the vendor linker namespace.
 PRODUCT_PACKAGES += \
