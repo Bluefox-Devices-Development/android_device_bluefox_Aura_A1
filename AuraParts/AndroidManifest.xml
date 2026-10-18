@@ -23,6 +23,7 @@
 
         <activity
             android:name=".smartkey.SmartKeyActivity"
+            android:enableOnBackInvokedCallback="true"
             android:excludeFromRecents="true"
             android:exported="true"
             android:label="@string/smart_key_title"
