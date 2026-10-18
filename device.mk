@@ -177,7 +177,10 @@ PRODUCT_PACKAGES += audio.usb.default
 # Bluetooth audio
 PRODUCT_PACKAGES += \
     audio.bluetooth.default \
-    libbluetooth_audio_session
+    libbluetooth_audio_session \
+    libbluetooth_audio_session_aidl.vendor \
+    vendor.mediatek.hardware.bluetooth.audio@2.1.vendor \
+    vendor.mediatek.hardware.bluetooth.audio@2.2.vendor
 
 # Frozen AIDL NDK libraries needed by proprietary vendor processes. Install
 # their source-built vendor variants in the vendor linker namespace.
@@ -191,7 +194,7 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.common-V6-ndk.vendor \
     android.media.audio.common.types-V3-ndk.vendor \
     vendor.mediatek.hardware.audio-V1-ndk.vendor \
-    vendor.mediatek.hardware.bluetooth.audio-V1-ndk.vendor \
+    vendor.mediatek.hardware.bluetooth.audio-V4-ndk.vendor \
     vendor.mediatek.hardware.mtkpower-V1-ndk.vendor
 
 # A/B and recovery

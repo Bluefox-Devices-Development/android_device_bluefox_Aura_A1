@@ -1131,32 +1131,32 @@ vendor/lib64/mt6789/s5k3p3_mipi_raw_tuning.so;SYMLINK=vendor/lib64/s5k3p3_mipi_r
 vendor/lib64/mtkcam/mt6789/libmtkcam_streaminfo_plugin-p1stt.so;SYMLINK=vendor/lib64/mtkcam/libmtkcam_streaminfo_plugin-p1stt.so
 
 # 64-bit audio effect libraries
-vendor/lib64/soundfx/libaecsw.so
+vendor/lib64/soundfx/libaecsw.so:vendor/lib64/soundfx/libaecsw_prebuilt.so;FIX_SONAME
 vendor/lib64/soundfx/libaecsw_mtk.so
-vendor/lib64/soundfx/libagc1sw.so
+vendor/lib64/soundfx/libagc1sw.so:vendor/lib64/soundfx/libagc1sw_prebuilt.so;FIX_SONAME
 vendor/lib64/soundfx/libagc1sw_mtk.so
-vendor/lib64/soundfx/libagc2sw.so
+vendor/lib64/soundfx/libagc2sw.so:vendor/lib64/soundfx/libagc2sw_prebuilt.so;FIX_SONAME
 vendor/lib64/soundfx/libagc2sw_mtk.so
-vendor/lib64/soundfx/libbassboostsw.so
+vendor/lib64/soundfx/libbassboostsw.so:vendor/lib64/soundfx/libbassboostsw_prebuilt.so;FIX_SONAME
 vendor/lib64/soundfx/libbundleaidl.so:vendor/lib64/soundfx/libbundleaidl_prebuilt.so;FIX_SONAME
 vendor/lib64/soundfx/libdownmixaidl.so:vendor/lib64/soundfx/libdownmixaidl_prebuilt.so;FIX_SONAME
 vendor/lib64/soundfx/libdynamicsprocessingaidl.so:vendor/lib64/soundfx/libdynamicsprocessingaidl_prebuilt.so;FIX_SONAME
-vendor/lib64/soundfx/libenvreverbsw.so
-vendor/lib64/soundfx/libequalizersw.so
-vendor/lib64/soundfx/libextensioneffect.so
+vendor/lib64/soundfx/libenvreverbsw.so:vendor/lib64/soundfx/libenvreverbsw_prebuilt.so;FIX_SONAME
+vendor/lib64/soundfx/libequalizersw.so:vendor/lib64/soundfx/libequalizersw_prebuilt.so;FIX_SONAME
+vendor/lib64/soundfx/libextensioneffect.so:vendor/lib64/soundfx/libextensioneffect_prebuilt.so;FIX_SONAME
 vendor/lib64/soundfx/libhapticgeneratoraidl.so:vendor/lib64/soundfx/libhapticgeneratoraidl_prebuilt.so;FIX_SONAME
 vendor/lib64/soundfx/libloudnessenhanceraidl.so:vendor/lib64/soundfx/libloudnessenhanceraidl_prebuilt.so;FIX_SONAME
-vendor/lib64/soundfx/libnssw.so
+vendor/lib64/soundfx/libnssw.so:vendor/lib64/soundfx/libnssw_prebuilt.so;FIX_SONAME
 vendor/lib64/soundfx/libnssw_mtk.so
-vendor/lib64/soundfx/libpreprocessingaidl.so
+vendor/lib64/soundfx/libpreprocessingaidl.so:vendor/lib64/soundfx/libpreprocessingaidl_prebuilt.so;FIX_SONAME
 vendor/lib64/soundfx/libpreprocessingaidl_mtk.so
-vendor/lib64/soundfx/libpresetreverbsw.so
+vendor/lib64/soundfx/libpresetreverbsw.so:vendor/lib64/soundfx/libpresetreverbsw_prebuilt.so;FIX_SONAME
 vendor/lib64/soundfx/libreverbaidl.so:vendor/lib64/soundfx/libreverbaidl_prebuilt.so;FIX_SONAME
 vendor/lib64/soundfx/libspatializer.so
 vendor/lib64/soundfx/libspatializeraidl.so
-vendor/lib64/soundfx/libvirtualizersw.so
+vendor/lib64/soundfx/libvirtualizersw.so:vendor/lib64/soundfx/libvirtualizersw_prebuilt.so;FIX_SONAME
 vendor/lib64/soundfx/libvisualizeraidl.so:vendor/lib64/soundfx/libvisualizeraidl_prebuilt.so;FIX_SONAME
-vendor/lib64/soundfx/libvolumesw.so
+vendor/lib64/soundfx/libvolumesw.so:vendor/lib64/soundfx/libvolumesw_prebuilt.so;FIX_SONAME
 
 # Stock vendor compatibility libraries
 vendor/lib64/android.hardware.audio.common-V3-ndk.so;EXTRACT_ONLY
@@ -1210,6 +1210,7 @@ vendor/lib64/libarmnn_ndk.mtk.vndk.so
 vendor/lib64/libasn1c_core.so
 vendor/lib64/libasn1c_mapi.so
 vendor/lib64/libasn1c_mdmi.so
+vendor/lib64/libaudio_aidl_conversion_common_ndk.so:vendor/lib64/libaudio_aidl_conversion_common_ndk_prebuilt.so;FIX_SONAME
 vendor/lib64/libaudio_param_parser-vnd.so
 vendor/lib64/libaudiocompensationfilter_vendor.so
 vendor/lib64/libaudiocompensationfilterc.so
@@ -1227,7 +1228,6 @@ vendor/lib64/libaurisysdemo.so
 vendor/lib64/libawinic_mtk_aurisys.so
 vendor/lib64/libbessound_hd_mtk_vendor.so
 vendor/lib64/libblisrc32_vendor.so
-vendor/lib64/libbluetooth_audio_session_aidl.so
 vendor/lib64/libbluetooth_audio_session_aidl_displayone.so
 vendor/lib64/libbluetooth_audio_session_aidl_displaytwo.so
 vendor/lib64/libbluetooth_audio_session_aidl_mtk.so
@@ -1433,6 +1433,7 @@ vendor/lib64/libteei_daemon_vfs.so
 vendor/lib64/libtflite_mtk.so
 vendor/lib64/libthhclient.so
 vendor/lib64/libtinycompress.so
+vendor/lib64/libtinyxml2.so:vendor/lib64/libtinyxml2_mtk.so;FIX_SONAME
 vendor/lib64/libtms_log_record.so
 vendor/lib64/libtranslator_mapi_v3.0.so
 vendor/lib64/libtranslator_mdmi_v2.8.2.so
@@ -1518,7 +1519,7 @@ vendor/lib64/vendor.mediatek.hardware.mmagent@1.0.so
 vendor/lib64/vendor.mediatek.hardware.mmlpq-V3-ndk.so
 vendor/lib64/vendor.mediatek.hardware.mmlpq-V5-ndk.so
 vendor/lib64/vendor.mediatek.hardware.mms-V1-ndk.so
-vendor/lib64/vendor.mediatek.hardware.mtkpower-V2-ndk.so;MODULE_SUFFIX=-vendorcompat
+vendor/lib64/vendor.mediatek.hardware.mtkpower-V2-ndk.so:vendor/lib64/vendor.mediatek.hardware.mtkpower-V2-ndk_prebuilt.so;FIX_SONAME
 vendor/lib64/vendor.mediatek.hardware.mtkpower-V3-ndk.so
 vendor/lib64/vendor.mediatek.hardware.mtkpower_applist-V3-ndk.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex.assist-V2-ndk.so
