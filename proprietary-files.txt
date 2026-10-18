@@ -1,4 +1,8 @@
-# Proprietary files from BLUEFOX/Aura_A1/Aura_A1:16/BP2A.250605.031.A3/20260610:user/release-keys
+# Proprietary files from BLUEFOX/Aura_A1/Aura_A1t:16/BP2A.250605.031.A3/20260924:user/release-keys
+# Default source: BLUEFOX_J583_A8_Aura_A1_EN_V1.0.1_20260924_09241748
+# Extract from this complete dump without --kang; do not preserve older blobs.
+# Only the two smali-patched APKs and version-specific PDAF fixup are pinned
+# to validate their audited input/output pairs. No alternate sources are used.
 
 # Stock proprietary bootstrap. Generated partition metadata, source-owned
 # fstab/VINTF declarations, Google connectivity overlays, the stock CAS APEX,
@@ -12,14 +16,14 @@ system_ext/etc/sysconfig/com.mediatek.ims.config.xml
 system_ext/framework/mediatek-ims-base.jar:system/framework/mediatek-ims-base.jar;BOOT_JAR
 system_ext/framework/mediatek-ims-extension-plugin.jar
 system_ext/lib64/libcomutils.so
-system_ext/lib64/libimsma.so|13663236d8eabfa7e26c244a25a259506cab39c3|3d36468c707286d5a07872312f8ea367f05e1707
+system_ext/lib64/libimsma.so
 system_ext/lib64/libimsma_adapt.so
 system_ext/lib64/libimsma_rtp.so
 system_ext/lib64/libimsma_socketwrapper.so
 system_ext/lib64/libmtk_vt_service.so
 system_ext/lib64/libmtk_vt_wrapper.so
 system_ext/lib64/libsignal.so
-system_ext/lib64/libsink.so:system_ext/lib64/libsink-mtk.so;FIX_SONAME|8635db41b3f5ff4e66f3de79521449ec18753269|6825005c08b626048b4e9de1a7526b8b62dc80d0
+system_ext/lib64/libsink.so:system_ext/lib64/libsink-mtk.so;FIX_SONAME
 system_ext/lib64/libsource.so
 system_ext/lib64/libvcodec_cap.so
 system_ext/lib64/libvcodec_capenc.so
@@ -30,17 +34,17 @@ system_ext/priv-app/ImsService/ImsService.apk|93a477df88ac48532f338909aaba5d8244
 system_ext/priv-app/MtkGbaService/MtkGbaService.apk
 system_ext/priv-app/MtkTelephonyAssist/MtkTelephonyAssist.apk|44670cd483046ebb2c66ce0f9fcf17a52e5faf7b|3c5c0cfaea9b41a56d6c293d8fb764b7f122a465
 
-# Fingerprint - BLUEFOX_J583_A8_Aura_A1_CN_V1.0.0_20260805
-vendor/bin/hw/android.hardware.biometrics.fingerprint-service|23a471b71abd9f596b3ba5922f3e08ecab71138f
-vendor/etc/init/fingerprint-default1.rc|e2656520bf666654a3b69351ebe0c23c19f5f32e
-vendor/etc/init/init.focaltech.rc|cf2dc42ef629efb1b45e3cdc5eba739853e13143
-vendor/etc/vintf/manifest/fingerprint-default.xml:vendor/etc/vintf/manifest/fingerprint-default.aura.xml|d127f61a5ccda2a2e0dd9523300b267a5d5b73f2
-vendor/lib64/hw/libfingerprint.focaltech.default.so|5e70754211901fd1a1588b01a92010109c0ea93b
-vendor/thh/ta/04190000000000000000000000000000.ta|b1b28bd4c174b3bc6913d16c24c15540a23a52db
+# Fingerprint
+vendor/bin/hw/android.hardware.biometrics.fingerprint-service
+vendor/etc/init/fingerprint-default1.rc
+vendor/etc/init/init.focaltech.rc
+vendor/etc/vintf/manifest/fingerprint-default.xml:vendor/etc/vintf/manifest/fingerprint-default.aura.xml
+vendor/lib64/hw/libfingerprint.focaltech.default.so
+vendor/thh/ta/04190000000000000000000000000000.ta
 
-# DRM - BLUEFOX_J583_A8_Aura_A1_EN_8_128_V1.0.0_20260610
-vendor/apex/com.google.android.widevine.nonupdatable.apex|2fcc8fc2f2baa86aa0010f667a9fb19300acc465
-vendor/apex/com.mediatek.oemcrypto.apex|19d0d3f110e898b4536a6ab28743ee4e58b5311d
+# DRM
+vendor/apex/com.google.android.widevine.nonupdatable.apex
+vendor/apex/com.mediatek.oemcrypto.apex
 
 # Vendor executables
 vendor/bin/atcid
@@ -66,7 +70,7 @@ vendor/bin/init.insmod.sh
 vendor/bin/init.pstore_blk.sh
 vendor/bin/init_thh
 vendor/bin/ipsec_mon
-vendor/bin/mnld|45688923d6f0adbc436d0b48d017fb460bfa8362|ba9c90c80cdaaa9101dff9ce9958d1cebedd0ee6
+vendor/bin/mnld
 vendor/bin/mtk_agpsd
 vendor/bin/mtk_lbs_service
 vendor/bin/mtk_pkm_service
@@ -232,8 +236,8 @@ vendor/etc/aidl/le_audio/aidl_default_audio_set_configurations.json_mtk
 vendor/etc/aidl/le_audio/aidl_default_audio_set_scenarios.json:vendor/etc/aidl/le_audio/aidl_default_audio_set_scenarios.aura
 
 # Modem database
-vendor/etc/apdb/APDB_MT6789___W2619
-vendor/etc/apdb/APDB_MT6789___W2619_ENUM
+vendor/etc/apdb/APDB_MT6789___W2629
+vendor/etc/apdb/APDB_MT6789___W2629_ENUM
 
 # Audio parameters
 vendor/etc/audio_param/AudioParamOptions_vext.xml
@@ -366,7 +370,7 @@ vendor/etc/audio_param/Volume_AudioParam.xml
 vendor/etc/audio_param/Volume_ParamUnitDesc.xml
 
 # GNSS configuration
-vendor/etc/gnss/agps_profiles_conf2.xml|9be681a2522cc37202cda769e2538daab2c58111|226cd32cf65ae6af6c5053e57c30d25287a7e374
+vendor/etc/gnss/agps_profiles_conf2.xml
 vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_ATnT_Mexico.xml
 vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_ATnT_US.xml
 vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Claro_Peru.xml
@@ -389,7 +393,7 @@ vendor/etc/gralloc/vpu.xml
 
 # Init scripts
 vendor/etc/init/android.hardware.audio.service-aidl.mediatek.rc
-vendor/etc/init/android.hardware.drm-service.clearkey.rc:vendor/etc/init/android.hardware.drm-service.clearkey-stock.rc|c0465ba6570a1d84f65548ec9a9354a76bf3166c|6cd211901568f0614ade83e359274b669bcc4073
+vendor/etc/init/android.hardware.drm-service.clearkey.rc:vendor/etc/init/android.hardware.drm-service.clearkey-stock.rc
 vendor/etc/init/android.hardware.gatekeeper-service.beanpod.rc
 vendor/etc/init/android.hardware.gnss-service.mediatek.rc
 vendor/etc/init/android.hardware.graphics.allocator-V2-service-mediatek.rc
@@ -400,8 +404,8 @@ vendor/etc/init/android.hardware.secure_element@1.2-service-mediatek.rc
 vendor/etc/init/android.hardware.security.keymint-service.beanpod.rc
 vendor/etc/init/android.hardware.usb-aidl-service.mediatek.rc
 vendor/etc/init/android.hardware.usb.gadget-aidl-service.mediatek.rc
-vendor/etc/init/android.hardware.wifi-service-lazy.rc:vendor/etc/init/android.hardware.wifi-service-lazy-stock.rc|2d5c9682c686bcdf0570d40cbccc582b8d1c1a0f|d12dd683b140927222a9640c4f008a02ad7425d2
-vendor/etc/init/android.hardware.wifi.supplicant-service.rc:vendor/etc/init/android.hardware.wifi.supplicant-service-stock.rc|4ec19161af3b59f2ec4c92f0da0ac68f0d3979eb|bcf55d4cc21b9adcb4abf7173846ad61cdad9da3
+vendor/etc/init/android.hardware.wifi-service-lazy.rc:vendor/etc/init/android.hardware.wifi-service-lazy-stock.rc
+vendor/etc/init/android.hardware.wifi.supplicant-service.rc:vendor/etc/init/android.hardware.wifi.supplicant-service-stock.rc
 vendor/etc/init/atcid.rc
 vendor/etc/init/audiocmdservice_atci.rc
 vendor/etc/init/bootperf.rc
@@ -416,12 +420,12 @@ vendor/etc/init/gsm0710muxd.rc
 vendor/etc/init/hostapd.android.rc
 vendor/etc/init/hw/init.aee.rc
 vendor/etc/init/hw/init.cgroup.rc
-vendor/etc/init/hw/init.connectivity.common.rc|37bd4b228ccc876417699d40eb56f6cc6b3dd4ff|543a1846e0eeaa71909d32d04bec3a90e630d5ef
+vendor/etc/init/hw/init.connectivity.common.rc
 vendor/etc/init/hw/init.connectivity.rc
 vendor/etc/init/hw/init.hct.platform.rc
 vendor/etc/init/hw/init.hct.rc
 vendor/etc/init/hw/init.modem.rc
-vendor/etc/init/hw/init.mt6789.rc|f5f1a48a7a5d5e4c008ac0793a9260c5a1fe1b62|ba34f36cb9763e63eefbf6c973e875cf3b10a81a
+vendor/etc/init/hw/init.mt6789.rc
 vendor/etc/init/hw/init.mt6789.usb.rc
 vendor/etc/init/hw/init.mtkgki.rc
 vendor/etc/init/hw/init.project.rc
@@ -772,7 +776,9 @@ vendor/firmware/mt6632_fm_v1_coeff.bin
 vendor/firmware/mt6632_fm_v1_patch.bin
 vendor/firmware/mt6635_fm_v1_coeff.bin
 vendor/firmware/mt6635_fm_v1_patch.bin
+vendor/firmware/qiefen.bin
 vendor/firmware/remoteproc_scp
+vendor/firmware/runin.bin
 vendor/firmware/soc2_2_ram_bt_1d_1_hdr.bin
 vendor/firmware/soc2_2_ram_bt_1e_1_hdr.bin
 vendor/firmware/soc2_2_ram_mcu_1d_1_hdr.bin
@@ -819,7 +825,7 @@ vendor/lib64/hw/mt6789/android.hardware.graphics.allocator-V2-mediatek.so;SYMLIN
 vendor/lib64/hw/mt6789/mapper.mediatek.so;SYMLINK=vendor/lib64/hw/mapper.mediatek.so
 vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.ccap@1.0-impl.so;SYMLINK=vendor/lib64/hw/vendor.mediatek.hardware.camera.ccap@1.0-impl.so
 vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.isphal_aidl@1.0-impl.so;SYMLINK=vendor/lib64/hw/vendor.mediatek.hardware.camera.isphal_aidl@1.0-impl.so
-vendor/lib64/hw/mt6789/vendor.mediatek.hardware.pq_aidl-impl.so;SYMLINK=vendor/lib64/hw/vendor.mediatek.hardware.pq_aidl-impl.so|fb5bfac9304eabce1c7cf8455b0130724a8c22cc|e3b26391b1d08e26da030109d02df9b106f3ee4a
+vendor/lib64/hw/mt6789/vendor.mediatek.hardware.pq_aidl-impl.so;SYMLINK=vendor/lib64/hw/vendor.mediatek.hardware.pq_aidl-impl.so
 vendor/lib64/hw/mt6789/vulkan.mali.so;SYMLINK=vendor/lib64/hw/vulkan.mali.so
 vendor/lib64/hw/mtkflp.default.so
 vendor/lib64/hw/mtkgeofence.default.so
@@ -990,12 +996,12 @@ vendor/lib64/mt6789/libcam.hal3a.v3.so;SYMLINK=vendor/lib64/libcam.hal3a.v3.so
 vendor/lib64/mt6789/libcam.halisp.buf.so;SYMLINK=vendor/lib64/libcam.halisp.buf.so
 vendor/lib64/mt6789/libcam.halisp.common.so;SYMLINK=vendor/lib64/libcam.halisp.common.so
 vendor/lib64/mt6789/libcam.halisp.so;SYMLINK=vendor/lib64/libcam.halisp.so
-vendor/lib64/mt6789/libcam.halsensor.so;SYMLINK=vendor/lib64/libcam.halsensor.so|a4e2f3ed99577778b5dcd5ee47a9a00e89f4f203|511e6803458d0a4532f821d77794530cc8da3267
+vendor/lib64/mt6789/libcam.halsensor.so;SYMLINK=vendor/lib64/libcam.halsensor.so
 vendor/lib64/mt6789/libcam.iopipe.so;SYMLINK=vendor/lib64/libcam.iopipe.so
 vendor/lib64/mt6789/libcam.isptuning.so;SYMLINK=vendor/lib64/libcam.isptuning.so
 vendor/lib64/mt6789/libcam.pdtblgen.so;SYMLINK=vendor/lib64/libcam.pdtblgen.so
 vendor/lib64/mt6789/libcam.tuning.cache.so;SYMLINK=vendor/lib64/libcam.tuning.cache.so
-vendor/lib64/mt6789/libcam.utils.sensorprovider.so;SYMLINK=vendor/lib64/libcam.utils.sensorprovider.so|ec0ec2546db767ea918f6bd4ef85126d72494088|a0c4509133ccabea09f12d989d65b5d82d195169
+vendor/lib64/mt6789/libcam.utils.sensorprovider.so;SYMLINK=vendor/lib64/libcam.utils.sensorprovider.so
 vendor/lib64/mt6789/libcam.vhdr.so;SYMLINK=vendor/lib64/libcam.vhdr.so
 vendor/lib64/mt6789/libcamalgo.eis.so;SYMLINK=vendor/lib64/libcamalgo.eis.so
 vendor/lib64/mt6789/libcamalgo.fdft.so;SYMLINK=vendor/lib64/libcamalgo.fdft.so
@@ -1076,7 +1082,7 @@ vendor/lib64/mt6789/libmtkcam_fdvt.so;SYMLINK=vendor/lib64/libmtkcam_fdvt.so
 vendor/lib64/mt6789/libmtkcam_featurepolicy.so;SYMLINK=vendor/lib64/libmtkcam_featurepolicy.so
 vendor/lib64/mt6789/libmtkcam_featureutils.so;SYMLINK=vendor/lib64/libmtkcam_featureutils.so
 vendor/lib64/mt6789/libmtkcam_fwkutils.so;SYMLINK=vendor/lib64/libmtkcam_fwkutils.so
-vendor/lib64/mt6789/libmtkcam_grallocutils.so;SYMLINK=vendor/lib64/libmtkcam_grallocutils.so|da1793174a8e301c3f92f7e20eba2aae94f8e16a|1fb40e5712a4bf4e4692b476bd0030935fea09f1
+vendor/lib64/mt6789/libmtkcam_grallocutils.so;SYMLINK=vendor/lib64/libmtkcam_grallocutils.so
 vendor/lib64/mt6789/libmtkcam_hal_aidl_common.so;SYMLINK=vendor/lib64/libmtkcam_hal_aidl_common.so
 vendor/lib64/mt6789/libmtkcam_hal_aidl_device.so;SYMLINK=vendor/lib64/libmtkcam_hal_aidl_device.so
 vendor/lib64/mt6789/libmtkcam_hal_aidl_provider.so;SYMLINK=vendor/lib64/libmtkcam_hal_aidl_provider.so
@@ -1117,7 +1123,7 @@ vendor/lib64/mt6789/libmtkcam_synchelper.so;SYMLINK=vendor/lib64/libmtkcam_synch
 vendor/lib64/mt6789/libmtkcam_sysutils.so;SYMLINK=vendor/lib64/libmtkcam_sysutils.so
 vendor/lib64/mt6789/libmtkcam_tuning_utils.so;SYMLINK=vendor/lib64/libmtkcam_tuning_utils.so
 vendor/lib64/mt6789/libmtkcam_ulog.so;SYMLINK=vendor/lib64/libmtkcam_ulog.so
-vendor/lib64/mt6789/libneuron_adapter_mgvi.so;SYMLINK=vendor/lib64/libneuron_adapter_mgvi.so|a9f77725f4c45065dedbadbc2e36567e914e4ca0|5c03bfb7394fe813c1cf7c3b49c6d91edcb6807f
+vendor/lib64/mt6789/libneuron_adapter_mgvi.so;SYMLINK=vendor/lib64/libneuron_adapter_mgvi.so
 vendor/lib64/mt6789/libneuron_runtime.6.so;SYMLINK=vendor/lib64/libneuron_runtime.6.so
 vendor/lib64/mt6789/libneuron_runtime.7.so;SYMLINK=vendor/lib64/libneuron_runtime.7.so
 vendor/lib64/mt6789/libneuron_runtime.8.so;SYMLINK=vendor/lib64/libneuron_runtime.8.so
@@ -1184,7 +1190,7 @@ vendor/lib64/APUWareUtilsAidlServer.so
 vendor/lib64/AVCSecureVdecCA.so
 vendor/lib64/HEVCSecureVdecCA.so
 vendor/lib64/VP9SecureVdecCA.so
-vendor/lib64/android.hardware.audio.core-impl-mediatek.so|b9aad7d356bf5f723674b3cd8f48ef78957042d1|537a9238c9f5c1da1663432c16615fbd388c86ba
+vendor/lib64/android.hardware.audio.core-impl-mediatek.so
 vendor/lib64/android.hardware.bluetooth.audio-impl-mediatek.so
 vendor/lib64/android.hardware.power-service-mediatek.so
 vendor/lib64/imx06c_mipi_raw_IdxMgr.so
@@ -1236,10 +1242,10 @@ vendor/lib64/libawinic_mtk_aurisys.so
 vendor/lib64/libbessound_hd_mtk_vendor.so
 vendor/lib64/libblisrc32_vendor.so
 vendor/lib64/libbluetooth_audio_session.so
-vendor/lib64/libbluetooth_audio_session_aidl.so|ffc7c8bdda1882c4f3cacedaa4611573a9bdb7a3|6e580a78e2410250cf7ce324b226e2a194a9e2f4
+vendor/lib64/libbluetooth_audio_session_aidl.so
 vendor/lib64/libbluetooth_audio_session_aidl_displayone.so
 vendor/lib64/libbluetooth_audio_session_aidl_displaytwo.so
-vendor/lib64/libbluetooth_audio_session_aidl_mtk.so|e296fd9c2cf0438154da10d0d478803c9e776dc5|f4bf8a0c740295d7fe3144969b7b9d0448d4fc6f
+vendor/lib64/libbluetooth_audio_session_aidl_mtk.so
 vendor/lib64/libbluetooth_audio_session_control_adapter1.so
 vendor/lib64/libbluetooth_audio_session_control_adapter2.so
 vendor/lib64/libbluetooth_audio_session_control_adapter3.so
@@ -1320,7 +1326,7 @@ vendor/lib64/libjpeg-alpha_vendor.so
 vendor/lib64/libkeystore-engine-wifi-hidl.so
 vendor/lib64/libkeystore-wifi-hidl.so
 vendor/lib64/libladder.so
-vendor/lib64/libmcve.so|df74418b01f9806537921d723dda843658d39c84|efda7c4294987567af45303c7863f79bbd97d3ae
+vendor/lib64/libmcve.so
 vendor/lib64/libmipc.so
 vendor/lib64/libmmprofile.so
 vendor/lib64/libmnetlink_v104.so
@@ -1329,6 +1335,8 @@ vendor/lib64/libmsbc_mtk.so
 vendor/lib64/libmtk-fusion-ril-prop-vsim.so
 vendor/lib64/libmtk-ril.so
 vendor/lib64/libmtk_bsg.so
+vendor/lib64/libmtkcam.plugin.mono_capture.so
+vendor/lib64/libmtkcam.plugin.mono_preview.so
 vendor/lib64/libmtkcam_pipelinepolicy-aov.so
 vendor/lib64/libmtkconfig.so
 vendor/lib64/libmtkconfigutils.so
@@ -1395,9 +1403,9 @@ vendor/lib64/libmvpuop30_mtk_nn.so
 vendor/lib64/libmvpuop_mtk_cv.so
 vendor/lib64/libmvpuop_mtk_nn.so
 vendor/lib64/libnbaio_mono.so
-vendor/lib64/libneuralnetworks_sl_driver_mtk_prebuilt.so|a1fe2c506257d48b928344c93f04b3ba2e47f04d|995abc530468ba9075c3c073aee6fe23c48bb3fa
+vendor/lib64/libneuralnetworks_sl_driver_mtk_prebuilt.so
 vendor/lib64/libneuron_graph_delegate.mtk.so
-vendor/lib64/libnir_neon_driver_ndk.mtk.vndk.so;FIX_SONAME|3d80ab953ab4032e9b6e1a6fc30ba3496cc1be85|79bc09881a66444ab052006dc5e9067481fab481
+vendor/lib64/libnir_neon_driver_ndk.mtk.vndk.so;FIX_SONAME
 vendor/lib64/libnpagent.so
 vendor/lib64/libnpagent_server.so
 vendor/lib64/libnputils.so
@@ -1428,7 +1436,7 @@ vendor/lib64/libsilkybrightnesscore.so
 vendor/lib64/libsimaka.so
 vendor/lib64/libsimlock.so
 vendor/lib64/libsimmelock.so
-vendor/lib64/libspeech_enh_lib.so;FIX_SONAME|54e6a9fd753dc5aced4329e031bdec20ef9c2efe|e7cb9a2232698f5366732d6219b2be9642ed4f5f
+vendor/lib64/libspeech_enh_lib.so;FIX_SONAME
 vendor/lib64/libspeechparser_vendor.so
 vendor/lib64/libssl-md.so
 vendor/lib64/libstorage_otp.so
@@ -1436,8 +1444,8 @@ vendor/lib64/libstrongswan.so
 vendor/lib64/libswtcc.so
 vendor/lib64/libsysenv.so
 vendor/lib64/libteec.so
-vendor/lib64/libteei_daemon_vfs.so|b026296e4c120e82c77e443d5beab91e33e9b654|d3ce6bbc2d79aa253c382ea917de2839c7b5ce02
-vendor/lib64/libtflite_mtk.so|0a8da0a40002b219e4262caf84099fce3e299ffc|960caa2b8224336695577b2382d09a50aa429ace
+vendor/lib64/libteei_daemon_vfs.so
+vendor/lib64/libtflite_mtk.so
 vendor/lib64/libthhclient.so
 vendor/lib64/libtinycompress.so
 vendor/lib64/libtms_log_record.so
