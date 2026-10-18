@@ -10,7 +10,6 @@ android.hardware.secure_element.ISecureElement/SIM4 u:object_r:hal_secure_elemen
 FocalFingerprintService u:object_r:focaltech_fp_service:s0
 vendor.mediatek.hardware.apmonitor.IApmService/default u:object_r:mtk_hal_apm_service:s0
 vendor.mediatek.hardware.atci.IAtcid/default u:object_r:mtk_hal_atci_service:s0
-vendor.mediatek.hardware.bluetooth.audio.IBluetoothAudioProviderFactory/default u:object_r:mtk_hal_audio_service:s0
 vendor.mediatek.hardware.dmc.IDmcService/default u:object_r:mtk_hal_dmc_service:s0
 vendor.mediatek.hardware.gnss.batching.IMtkGnssBatching/default u:object_r:mtk_hal_batching_service:s0
 vendor.mediatek.hardware.mtkradioex.ntn.IMtkRadioExNtn/slot1 u:object_r:hal_radio_service:s0
