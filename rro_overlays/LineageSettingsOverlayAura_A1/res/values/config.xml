@@ -4,6 +4,10 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
+    <!-- Keep enrollment location hints on the side while the stock AIDL HAL
+         still reports HOME_BUTTON. This does not change its sensor type. -->
+    <bool name="config_is_side_fps">true</bool>
+
     <!-- Whether to show Smooth Display feature in Settings Options -->
     <bool name="config_show_smooth_display">true</bool>
 </resources>
