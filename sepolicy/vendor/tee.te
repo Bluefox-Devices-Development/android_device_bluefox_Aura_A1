@@ -1,1 +1,5 @@
 wakelock_use(tee)
+
+# The stock storage proxy uses servicemanager and publishes UFS readiness.
+binder_use(tee)
+set_prop(tee, vendor_mtk_ufs_prop)

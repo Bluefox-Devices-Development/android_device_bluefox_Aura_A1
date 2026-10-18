@@ -12,3 +12,5 @@ vendor.boostfwk.scroll.duration.v u:object_r:vendor_mtk_boostfwk_scroll_duration
 vendor.boostfwk.sbb.touch.duration u:object_r:vendor_mtk_boostfwk_sbb_touch_duration_prop:s0
 vendor.boostfwk.scroll.floor u:object_r:vendor_mtk_boostfwk_scroll_floor_prop:s0
 vendor.boostfwk.frame.decision u:object_r:vendor_mtk_boostfwk_frame_decision_prop:s0
+
+vendor.mtk.ufs. u:object_r:vendor_mtk_ufs_prop:s0
