@@ -194,7 +194,8 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.device-V3-ndk.vendor \
     android.hardware.camera.provider-V3-ndk.vendor \
     android.hardware.graphics.common-V6-ndk.vendor \
-    android.media.audio.common.types-V3-ndk.vendor
+    android.media.audio.common.types-V3-ndk.vendor \
+    vendor.mediatek.hardware.audio-V1-ndk.vendor
 
 # A/B and recovery
 PRODUCT_PACKAGES += \
