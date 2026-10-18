@@ -189,6 +189,24 @@ def write_page_size_4k_exceptions(ctx, packages_ctx):
     write_packages_inclusion(package_names, ctx.product_mk_out)
 
 
+def fix_ov64b40_pdaf_geometry(ctx, file, file_path, **_):
+    # WW 260924 added input bounds checks, but its cold path still selects
+    # 568x1720 while the reuse path selects the actual 1136x860 RAW10 input.
+    # The cold path therefore returns null at row 860. Its register allocation
+    # also changed: patch w28/w26, not the old build's w25/w24.
+    cold_geometry = b'\x1c\x47\x80\x52\x1a\xd7\x80\x52'
+    warm_geometry = b'\x1c\x8e\x80\x52\x9a\x6b\x80\x52'
+
+    with open(file_path, 'r+b') as blob:
+        data = blob.read()
+        if data.count(cold_geometry) != 1 or data.count(warm_geometry) != 1:
+            raise ValueError(
+                f'{file.dst}: unexpected OV64B40 PDAF code; re-audit geometry'
+            )
+        blob.seek(0)
+        blob.write(data.replace(cold_geometry, warm_geometry, 1))
+
+
 blob_fixups: blob_fixups_user_type = {
     'system_ext/priv-app/MtkTelephonyAssist/MtkTelephonyAssist.apk': blob_fixup()
         .apktool_patch('blob-patches/MtkTelephonyAssist'),
@@ -304,10 +322,7 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/mt6789/libcam.utils.sensorprovider.so': blob_fixup()
         .remove_needed('android.hardware.sensors-V2-ndk.so'),
     'vendor/lib64/mt6789/libcamera.custom.pd_buf_mgr.so': blob_fixup()
-        .binary_regex_replace(
-            b'\x19\x47\x80\x52\x18\xd7\x80\x52',
-            b'\x19\x8e\x80\x52\x98\x6b\x80\x52',
-        ),
+        .call(fix_ov64b40_pdaf_geometry, need_tmp_dir=False),
     'vendor/lib64/mt6789/libmtkcam_grallocutils.so': blob_fixup()
         .remove_needed('android.hardware.graphics.common-V5-ndk.so'),
 }
