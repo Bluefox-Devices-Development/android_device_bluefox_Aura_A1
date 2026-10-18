@@ -1,0 +1,2 @@
+# Preserve the stock DVFSRC thermal telemetry access.
+r_dir_file(thermal_core, sysfs_dvfsrc_dbg)
