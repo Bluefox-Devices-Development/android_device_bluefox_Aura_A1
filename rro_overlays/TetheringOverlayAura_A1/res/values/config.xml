@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-FileCopyrightText: 2026 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <!-- The production GKI enables NCM, but not CONFIG_USB_CONFIGFS_RNDIS. -->
+    <integer name="config_tether_usb_functions">1</integer>
+    <string-array name="config_tether_ncm_regexs" translatable="false">
+        <item>ncm[0-9]+</item>
+    </string-array>
+</resources>

@@ -114,8 +114,6 @@ vendor/bin/hw/android.hardware.nfc-service-tms
 vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek
 vendor/bin/hw/android.hardware.security.keymint@4.0-service.beanpod
 vendor/bin/hw/android.hardware.thermal-service.mediatek
-vendor/bin/hw/android.hardware.usb-aidl-service.mediatek
-vendor/bin/hw/android.hardware.usb.gadget-aidl-service.mediatek
 vendor/bin/hw/android.hardware.vibrator-service.mediatek
 vendor/bin/hw/android.hardware.wifi-service-lazy:vendor/bin/hw/android.hardware.wifi-service-lazy-stock
 vendor/bin/hw/hostapd;MODULE=hostapd-stock
@@ -401,8 +399,6 @@ vendor/etc/init/android.hardware.identity-service.beanpod.rc
 vendor/etc/init/android.hardware.media.c2-mediatek-64b.rc
 vendor/etc/init/android.hardware.secure_element@1.2-service-mediatek.rc
 vendor/etc/init/android.hardware.security.keymint-service.beanpod.rc
-vendor/etc/init/android.hardware.usb-aidl-service.mediatek.rc
-vendor/etc/init/android.hardware.usb.gadget-aidl-service.mediatek.rc
 vendor/etc/init/android.hardware.wifi-service-lazy.rc:vendor/etc/init/android.hardware.wifi-service-lazy-stock.rc
 vendor/etc/init/android.hardware.wifi.supplicant-service.rc:vendor/etc/init/android.hardware.wifi.supplicant-service-stock.rc
 vendor/etc/init/atcid.rc
@@ -710,8 +706,6 @@ vendor/etc/vintf/manifest/android.hardware.identity-service.beanpod.xml
 vendor/etc/vintf/manifest/android.hardware.security.keymint-service.beanpod.xml
 vendor/etc/vintf/manifest/android.hardware.security.secureclock-service.beanpod.xml
 vendor/etc/vintf/manifest/android.hardware.security.sharedsecret-service.beanpod.xml
-vendor/etc/vintf/manifest/android.hardware.usb-aidl-service.mediatek.xml
-vendor/etc/vintf/manifest/android.hardware.usb.gadget-aidl-service.mediatek.xml
 vendor/etc/vintf/manifest/android.hardware.wifi-service.xml:vendor/etc/vintf/manifest/android.hardware.wifi-service.aura.xml
 vendor/etc/vintf/manifest/android.hardware.wifi.hostapd.xml:vendor/etc/vintf/manifest/android.hardware.wifi.hostapd.aura.xml
 vendor/etc/vintf/manifest/android.hardware.wifi.supplicant.xml:vendor/etc/vintf/manifest/android.hardware.wifi.supplicant.aura.xml

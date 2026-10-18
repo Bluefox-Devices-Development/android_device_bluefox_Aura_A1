@@ -107,6 +107,14 @@ PRODUCT_PACKAGES += \
 # MediaTek gadget fallback.
 $(call soong_config_set_bool,mediatek_gadget,use_custom_usb_gadget_rc,true)
 
+PRODUCT_PACKAGES += \
+    android.hardware.usb-service.mediatek \
+    android.hardware.usb.gadget-service.mediatek \
+    TetheringOverlayAura_A1
+
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/rootdir/etc/init/init.aura.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.aura.usb.rc
+
 $(call inherit-product, hardware/mediatek/overlay/mssi.mk)
 
 # Device settings
