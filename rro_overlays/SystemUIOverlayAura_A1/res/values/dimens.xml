@@ -5,4 +5,8 @@
 -->
 <resources>
     <dimen name="lock_icon_padding">24px</dimen>
+
+    <!-- Move the status bar contents 4dp to the right without changing their available width. -->
+    <dimen name="status_bar_padding_start">8dp</dimen>
+    <dimen name="status_bar_padding_end">0dp</dimen>
 </resources>
