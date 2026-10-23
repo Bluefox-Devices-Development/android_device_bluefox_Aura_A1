@@ -136,6 +136,7 @@ PRODUCT_PACKAGES += \
     LineagePartsOverlayAura_A1 \
     LineageSDKOverlayAura_A1 \
     LineageSettingsOverlayAura_A1 \
+    SettingsProviderOverlayAura_A1 \
     SystemUIOverlayAura_A1 \
     WifiOverlayAura_A1
 
