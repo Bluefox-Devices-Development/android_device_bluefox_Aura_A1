@@ -22,8 +22,12 @@ PRODUCT_MANUFACTURER := BLUEFOX
 PRODUCT_BRAND := BLUEFOX
 PRODUCT_MODEL := BF00A
 
+# Keep the stock attestation identity while using Aura_A1 at runtime.
+PRODUCT_DEVICE_FOR_ATTESTATION := Aura_A1t
+
 PRODUCT_GMS_CLIENTID_BASE := android-bluefox
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
+    BuildFingerprint=BLUEFOX/Aura_A1/Aura_A1t:16/BP2A.250605.031.A3/20260924:user/release-keys \
     DeviceName=Aura_A1 \
     DeviceProduct=Aura_A1
