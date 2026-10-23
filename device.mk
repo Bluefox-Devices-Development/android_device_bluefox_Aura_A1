@@ -227,6 +227,7 @@ PRODUCT_PACKAGES_DEBUG += \
 # data partitions.
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/etc/init/init.aura.early-adb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.aura.early-adb.rc \
+    $(DEVICE_PATH)/rootdir/etc/init/init.aura.vibrator.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.aura.vibrator.rc \
     $(DEVICE_PATH)/rootdir/etc/init/init.nfc.tms.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.nfc.tms.rc \
     $(DEVICE_PATH)/rootdir/etc/init/init.sensors.aura.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.sensors.aura.rc \
     $(DEVICE_PATH)/rootdir/etc/fstab.enableswap:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.enableswap \

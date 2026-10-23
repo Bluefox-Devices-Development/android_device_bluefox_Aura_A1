@@ -1,0 +1,9 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# Restore the RTP access granted by the stock system init for short effects.
+on boot
+    chown system system /sys/class/leds/vibrator_5f/rtp
+    chmod 0660 /sys/class/leds/vibrator_5f/rtp
